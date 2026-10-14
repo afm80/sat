@@ -1,6 +1,6 @@
 {
-  "name": "الفحام لايف",
-  "short_name": "الفحام لايف",
+  "name": "الفحام سات",
+  "short_name": "الفحام سات",
   "description": "شاهد جميع القنوات العربية والعالمية والمحلية بتطبيق واحد ",
   "start_url": "./index.html",
   "scope": "./",
@@ -12,13 +12,13 @@
   "dir": "rtl",
   "icons": [
     {
-      "src": "Alfaham-live.png",
+      "src": "Alfaham-sat.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "Alfaham-live.png",
+      "src": "Alfaham-sat.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
