@@ -1165,13 +1165,15 @@ function buildChannelCards() {
   var section = document.getElementById('channelsSection');
   if (!section) return;
   section.innerHTML = '';
+  var lastGroup = null;
   CHANNELS.forEach(function(ch, index) {
-    if (index === MANUAL_COUNT) {
+    if (ch.group && ch.group !== lastGroup) {
       var title = document.createElement('div');
       title.className = 'auto-title';
-      title.textContent = 'قنوات إضافية (تحديث تلقائي)';
+      title.textContent = ch.group;
       section.appendChild(title);
     }
+    lastGroup = ch.group || null;
     var card = document.createElement('button');
     card.type = 'button';
     card.className = 'channel-card';
@@ -1257,7 +1259,7 @@ fetch('assets/auto_channels.json', { cache: 'no-cache' })
   .then(function(list) {
     if (!Array.isArray(list) || !list.length) return;
     list.forEach(function(c) {
-      if (c && c.name && c.url) CHANNELS.push({ name: String(c.name), url: String(c.url) });
+      if (c && c.name && c.url) CHANNELS.push({ name: String(c.name), url: String(c.url), group: String(c.group || 'قنوات إضافية (تحديث تلقائي)') });
     });
     buildChannelCards();
   })
