@@ -15,5 +15,5 @@ dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/channels.json
+    - assets/channels.txt
     - assets/logo.png
