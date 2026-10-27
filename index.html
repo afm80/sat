@@ -178,6 +178,22 @@ header.site-header .logo {
   z-index: 1;
 }
 
+.auto-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 4px;
+  color: #9A9A9A;
+  font-size: 12px;
+  font-weight: 700;
+}
+.auto-title::before, .auto-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--card-border);
+}
+
 .channel-card {
   display: block;
   width: 100%;
@@ -831,6 +847,7 @@ function parsePairs(text) {
 }
 
 var CHANNELS = parsePairs(CHANNELS_TEXT);
+var MANUAL_COUNT = CHANNELS.length; /* القنوات اليدوية فقط */
 
 var currentPlayer = 'primary';
 var currentUrl = '';
@@ -1140,11 +1157,18 @@ function buildChannelCards() {
   if (!section) return;
   section.innerHTML = '';
   CHANNELS.forEach(function(ch, index) {
+    if (index === MANUAL_COUNT) {
+      var title = document.createElement('div');
+      title.className = 'auto-title';
+      title.textContent = 'قنوات إضافية (تحديث تلقائي)';
+      section.appendChild(title);
+    }
     var card = document.createElement('button');
     card.type = 'button';
     card.className = 'channel-card';
     card.textContent = ch.name || ('قناة ' + (index + 1));
     card.dataset.index = index;
+    if (index === currentChannelIndex) card.classList.add('active');
     card.addEventListener('click', function() { switchChannel(index); });
     section.appendChild(card);
   });
@@ -1211,6 +1235,18 @@ if ('serviceWorker' in navigator) {
 }
 
 buildChannelCards();
+
+/* القنوات التلقائية (يحدّثها السكربت) تُضاف تحت القنوات اليدوية */
+fetch('assets/auto_channels.json', { cache: 'no-cache' })
+  .then(function(r) { return r.ok ? r.json() : []; })
+  .then(function(list) {
+    if (!Array.isArray(list) || !list.length) return;
+    list.forEach(function(c) {
+      if (c && c.name && c.url) CHANNELS.push({ name: String(c.name), url: String(c.url) });
+    });
+    buildChannelCards();
+  })
+  .catch(function() {});
 
 try { history.scrollRestoration = 'manual'; } catch(e){}
 if (CHANNELS.length > 0 && CHANNELS[0].url) switchChannel(0);
