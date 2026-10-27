@@ -67,6 +67,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Channel> channels = [];
   int current = -1;
+  bool fullscreen = false;
   final ctrl = StreamController2();
 
   @override
@@ -77,8 +78,28 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void dispose() {
+    SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     ctrl.dispose();
     super.dispose();
+  }
+
+  void toggleFullscreen() {
+    setState(() => fullscreen = !fullscreen);
+    if (fullscreen) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.landscapeLeft,
+        DeviceOrientation.landscapeRight,
+      ]);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+    } else {
+      SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+      SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+      // السماح بالتدوير التلقائي مجدداً بعد الرجوع
+      Future.delayed(const Duration(milliseconds: 600), () {
+        SystemChrome.setPreferredOrientations(DeviceOrientation.values);
+      });
+    }
   }
 
   void select(int i) {
@@ -189,66 +210,77 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(children: [
-          // الهيدر
-          Container(
-            height: 52,
-            padding: const EdgeInsets.symmetric(vertical: 6),
-            child: Image.asset('assets/logo.png'),
-          ),
-          Container(
-            height: 3,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Colors.transparent, brandRed, Colors.transparent]),
-            ),
-          ),
-          AnimatedBuilder(
-            animation: ctrl,
-            builder: (_, __) => Column(children: [
-              StreamView(ctrl: ctrl),
-              // شريط الأزرار
-              Container(
-                margin: const EdgeInsets.all(8),
-                padding: const EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                  color: cardBg,
-                  border: Border.all(color: cardBorder),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Wrap(
-                  spacing: 8,
-                  runSpacing: 6,
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: [
-                    barButton('المشغل الرئيسي', () => ctrl.setEngine(Engine.exo),
-                        active: ctrl.engine == Engine.exo),
-                    barButton('المشغل الاحتياطي', () => ctrl.setEngine(Engine.mpv),
-                        active: ctrl.engine == Engine.mpv),
-                    if (ctrl.status == PlayStatus.error)
-                      IconButton(
-                        onPressed: ctrl.retry,
-                        icon: const Icon(Icons.refresh, color: brandRed),
-                        tooltip: 'إعادة المحاولة',
+    final title = (current >= 0 && current < channels.length)
+        ? channels[current].name
+        : '';
+
+    Widget player() => StreamView(
+          ctrl: ctrl,
+          title: title,
+          fullscreen: fullscreen,
+          onFullscreen: toggleFullscreen,
+          onQuality: openQuality,
+        );
+
+    return PopScope(
+      canPop: !fullscreen,
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop && fullscreen) toggleFullscreen();
+      },
+      child: Scaffold(
+        body: fullscreen
+            ? AnimatedBuilder(animation: ctrl, builder: (_, __) => player())
+            : SafeArea(
+                child: Column(children: [
+                  // الهيدر
+                  Container(
+                    height: 52,
+                    padding: const EdgeInsets.symmetric(vertical: 6),
+                    child: Image.asset('assets/logo.png'),
+                  ),
+                  Container(
+                    height: 3,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Colors.transparent, brandRed, Colors.transparent]),
+                    ),
+                  ),
+                  AnimatedBuilder(
+                    animation: ctrl,
+                    builder: (_, __) => Column(children: [
+                      player(),
+                      // شريط الأزرار (قائمة القنوات فقط)
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: cardBg,
+                          border: Border.all(color: cardBorder),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Wrap(
+                          spacing: 8,
+                          runSpacing: 6,
+                          alignment: WrapAlignment.center,
+                          crossAxisAlignment: WrapCrossAlignment.center,
+                          children: [
+                            barButton('☰ قائمة القنوات', openMenu),
+                          ],
+                        ),
                       ),
-                    if (ctrl.qualities.isNotEmpty) barButton('الجودة', openQuality),
-                    barButton('☰ قائمة القنوات', openMenu),
-                  ],
-                ),
+                      if (ctrl.message.isNotEmpty &&
+                          ctrl.status != PlayStatus.error)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 6),
+                          child: Text(ctrl.message,
+                              style: const TextStyle(fontSize: 13)),
+                        ),
+                    ]),
+                  ),
+                  // كروت القنوات
+                  Expanded(child: channelList()),
+                ]),
               ),
-              if (ctrl.message.isNotEmpty)
-                Padding(
-                  padding: const EdgeInsets.only(bottom: 6),
-                  child: Text(ctrl.message, style: const TextStyle(fontSize: 13)),
-                ),
-            ]),
-          ),
-          // كروت القنوات
-          Expanded(child: channelList()),
-        ]),
       ),
     );
   }

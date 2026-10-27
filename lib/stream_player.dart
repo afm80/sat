@@ -22,6 +22,7 @@ class StreamController2 extends ChangeNotifier {
   String message = '';
   List<Quality> qualities = [];
   int quality = -1; // -1 = تلقائي
+  bool paused = false;
 
   VideoPlayerController? exo;
   Player? mpv;
@@ -63,6 +64,23 @@ class StreamController2 extends ChangeNotifier {
     await _run(_playUrl(), t, e, canFallback: true);
   }
 
+  // ---------- إيقاف مؤقت / تشغيل ----------
+  Future<void> togglePlay() async {
+    if (status != PlayStatus.playing) return;
+    paused = !paused;
+    notifyListeners();
+    try {
+      if (engine == Engine.exo) {
+        paused ? await exo?.pause() : await exo?.play();
+      } else {
+        paused ? await mpv?.pause() : await mpv?.play();
+      }
+    } catch (_) {}
+  }
+
+  String get qualityLabel =>
+      (quality >= 0 && quality < qualities.length) ? qualities[quality].label : 'تلقائي';
+
   // ---------- تبديل الجودة ----------
   Future<void> setQuality(int i) async {
     if (_url == null) return;
@@ -81,6 +99,7 @@ class StreamController2 extends ChangeNotifier {
       {required bool canFallback}) async {
     status = PlayStatus.loading;
     message = '';
+    paused = false;
     notifyListeners();
     await _disposeEngines();
     try {
@@ -248,26 +267,214 @@ class StreamController2 extends ChangeNotifier {
   }
 }
 
-/// واجهة عرض الفيديو
-class StreamView extends StatelessWidget {
+/// واجهة عرض الفيديو مع أزرار التحكم (تشغيل/إيقاف، الجودة، ملء الشاشة)
+class StreamView extends StatefulWidget {
   final StreamController2 ctrl;
-  const StreamView({super.key, required this.ctrl});
+  final String title;
+  final bool fullscreen;
+  final VoidCallback onFullscreen;
+  final VoidCallback onQuality;
+  const StreamView({
+    super.key,
+    required this.ctrl,
+    required this.title,
+    required this.fullscreen,
+    required this.onFullscreen,
+    required this.onQuality,
+  });
+
+  @override
+  State<StreamView> createState() => _StreamViewState();
+}
+
+class _StreamViewState extends State<StreamView> {
+  bool _visible = true;
+  Timer? _timer;
+
+  StreamController2 get ctrl => widget.ctrl;
+
+  void _restartTimer() {
+    _timer?.cancel();
+    _timer = Timer(const Duration(seconds: 4), () {
+      if (mounted && ctrl.status == PlayStatus.playing && !ctrl.paused) {
+        setState(() => _visible = false);
+      }
+    });
+  }
+
+  void _toggle() {
+    setState(() => _visible = !_visible);
+    if (_visible) _restartTimer();
+  }
+
+  void _touch(VoidCallback action) {
+    action();
+    _restartTimer();
+  }
+
+  @override
+  void dispose() {
+    _timer?.cancel();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 16 / 9,
-      child: Container(
-        color: Colors.black,
+    final playing = ctrl.status == PlayStatus.playing;
+    final showControls = _visible || !playing || ctrl.paused;
+
+    final body = Container(
+      color: Colors.black,
+      child: GestureDetector(
+        behavior: HitTestBehavior.translucent,
+        onTap: _toggle,
         child: Stack(fit: StackFit.expand, children: [
           _video(),
           if (ctrl.status == PlayStatus.loading)
-            const Center(child: CircularProgressIndicator(color: Color(0xFF8B0000))),
+            const Center(
+                child: CircularProgressIndicator(color: Color(0xFF8B0000))),
           if (ctrl.status == PlayStatus.idle)
             const Center(child: Text('اختر قناة', style: TextStyle(fontSize: 16))),
+          if (ctrl.status == PlayStatus.error)
+            Center(
+              child: Column(mainAxisSize: MainAxisSize.min, children: [
+                Text(ctrl.message, style: const TextStyle(fontSize: 14)),
+                const SizedBox(height: 8),
+                _roundBtn(Icons.refresh, ctrl.retry, size: 44),
+              ]),
+            ),
+          if (ctrl.status != PlayStatus.idle)
+            IgnorePointer(
+              ignoring: !showControls,
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: showControls ? 1 : 0,
+                child: _overlay(playing),
+              ),
+            ),
         ]),
       ),
     );
+
+    if (widget.fullscreen) return SizedBox.expand(child: body);
+    return AspectRatio(aspectRatio: 16 / 9, child: body);
+  }
+
+  Widget _roundBtn(IconData icon, VoidCallback onTap, {double size = 40}) {
+    return Material(
+      color: Colors.black54,
+      shape: const CircleBorder(),
+      child: InkWell(
+        customBorder: const CircleBorder(),
+        onTap: onTap,
+        child: SizedBox(
+          width: size,
+          height: size,
+          child: Icon(icon, color: Colors.white, size: size * 0.6),
+        ),
+      ),
+    );
+  }
+
+  Widget _pill(String label, IconData icon, VoidCallback onTap) {
+    return Material(
+      color: Colors.black54,
+      borderRadius: BorderRadius.circular(20),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+          child: Row(mainAxisSize: MainAxisSize.min, children: [
+            Icon(icon, color: Colors.white, size: 16),
+            const SizedBox(width: 5),
+            Text(label,
+                style: const TextStyle(
+                    color: Colors.white, fontSize: 12, fontWeight: FontWeight.w700)),
+          ]),
+        ),
+      ),
+    );
+  }
+
+  Widget _overlay(bool playing) {
+    return Stack(fit: StackFit.expand, children: [
+      // شريط علوي: اسم القناة + مباشر
+      Positioned(
+        top: 0,
+        left: 0,
+        right: 0,
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(12, 8, 12, 18),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: [Colors.black87, Colors.transparent],
+            ),
+          ),
+          child: Row(children: [
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              decoration: BoxDecoration(
+                color: const Color(0xFF8B0000),
+                borderRadius: BorderRadius.circular(4),
+              ),
+              child: const Text('مباشر',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 11,
+                      fontWeight: FontWeight.w900)),
+            ),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(widget.title,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w800)),
+            ),
+          ]),
+        ),
+      ),
+      // زر التشغيل / الإيقاف في المنتصف
+      if (playing)
+        Center(
+          child: _roundBtn(
+            ctrl.paused ? Icons.play_arrow : Icons.pause,
+            () => _touch(ctrl.togglePlay),
+            size: 60,
+          ),
+        ),
+      // شريط سفلي: الجودة + ملء الشاشة
+      Positioned(
+        bottom: 0,
+        left: 0,
+        right: 0,
+        child: Container(
+          padding: const EdgeInsets.fromLTRB(12, 18, 12, 8),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.bottomCenter,
+              end: Alignment.topCenter,
+              colors: [Colors.black87, Colors.transparent],
+            ),
+          ),
+          child: Row(children: [
+            if (ctrl.qualities.isNotEmpty)
+              _pill(ctrl.qualityLabel, Icons.settings, () => _touch(widget.onQuality)),
+            const Spacer(),
+            _roundBtn(
+              widget.fullscreen ? Icons.fullscreen_exit : Icons.fullscreen,
+              () => _touch(widget.onFullscreen),
+              size: 36,
+            ),
+          ]),
+        ),
+      ),
+    ]);
   }
 
   Widget _video() {
