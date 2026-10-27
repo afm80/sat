@@ -8,7 +8,6 @@ const brandRed = Color(0xFF8B0000);
 const brandBg = Color(0xFF0F0F0F);
 const cardBg = Color(0xFF1C1C1C);
 const cardBorder = Color(0xFF2A2A2A);
-const btnBg = Color(0xFF2A2A2A);
 
 class Channel {
   final String name;
@@ -107,33 +106,6 @@ class _HomePageState extends State<HomePage> {
     ctrl.play(channels[i].url);
   }
 
-  void openMenu() {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: cardBg,
-      builder: (_) => SizedBox(
-        height: MediaQuery.of(context).size.height * 0.75,
-        child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.all(12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('☰ قائمة القنوات',
-                    style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
-                TextButton(
-                    onPressed: () => Navigator.pop(context),
-                    child: const Text('إغلاق ✕')),
-              ],
-            ),
-          ),
-          Expanded(child: channelList(closeOnTap: true)),
-        ]),
-      ),
-    );
-  }
-
   void openQuality() {
     showModalBottomSheet(
       context: context,
@@ -165,8 +137,10 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget channelList({bool closeOnTap = false}) {
+  /// قائمة القنوات: تمرير عمودي، والمشغل ثابت في الأعلى
+  Widget channelList() {
     return ListView.separated(
+      physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       itemCount: channels.length,
       separatorBuilder: (_, __) => const SizedBox(height: 6),
@@ -174,10 +148,7 @@ class _HomePageState extends State<HomePage> {
         final active = i == current;
         return InkWell(
           borderRadius: BorderRadius.circular(8),
-          onTap: () {
-            select(i);
-            if (closeOnTap) Navigator.pop(context);
-          },
+          onTap: () => select(i),
           child: Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
@@ -193,18 +164,6 @@ class _HomePageState extends State<HomePage> {
           ),
         );
       },
-    );
-  }
-
-  Widget barButton(String label, VoidCallback onTap, {bool active = false}) {
-    return ElevatedButton(
-      onPressed: onTap,
-      style: ElevatedButton.styleFrom(
-        backgroundColor: active ? brandRed : btnBg,
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-      ),
-      child: Text(label, style: const TextStyle(fontSize: 12)),
     );
   }
 
@@ -245,39 +204,22 @@ class _HomePageState extends State<HomePage> {
                           colors: [Colors.transparent, brandRed, Colors.transparent]),
                     ),
                   ),
+                  // المشغل ثابت (لا يتحرك مع تمرير القنوات)
                   AnimatedBuilder(
                     animation: ctrl,
-                    builder: (_, __) => Column(children: [
+                    builder: (_, __) => Column(mainAxisSize: MainAxisSize.min, children: [
                       player(),
-                      // شريط الأزرار (قائمة القنوات فقط)
-                      Container(
-                        margin: const EdgeInsets.all(8),
-                        padding: const EdgeInsets.all(8),
-                        decoration: BoxDecoration(
-                          color: cardBg,
-                          border: Border.all(color: cardBorder),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Wrap(
-                          spacing: 8,
-                          runSpacing: 6,
-                          alignment: WrapAlignment.center,
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          children: [
-                            barButton('☰ قائمة القنوات', openMenu),
-                          ],
-                        ),
-                      ),
                       if (ctrl.message.isNotEmpty &&
                           ctrl.status != PlayStatus.error)
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 6),
+                          padding: const EdgeInsets.symmetric(vertical: 4),
                           child: Text(ctrl.message,
                               style: const TextStyle(fontSize: 13)),
                         ),
                     ]),
                   ),
-                  // كروت القنوات
+                  const SizedBox(height: 4),
+                  // كروت القنوات: هي فقط التي تتمرر عمودياً
                   Expanded(child: channelList()),
                 ]),
               ),

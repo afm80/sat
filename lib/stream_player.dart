@@ -78,6 +78,47 @@ class StreamController2 extends ChangeNotifier {
     } catch (_) {}
   }
 
+  // ---------- الموضع والتقديم / الرجوع ----------
+  Duration get position {
+    try {
+      if (engine == Engine.exo && exo != null) return exo!.value.position;
+      if (engine == Engine.mpv && mpv != null) return mpv!.state.position;
+    } catch (_) {}
+    return Duration.zero;
+  }
+
+  Duration get duration {
+    try {
+      if (engine == Engine.exo && exo != null) return exo!.value.duration;
+      if (engine == Engine.mpv && mpv != null) return mpv!.state.duration;
+    } catch (_) {}
+    return Duration.zero;
+  }
+
+  /// هل يمكن التمرير داخل البث (مباشر مع DVR أو ملف)
+  bool get canSeek => status == PlayStatus.playing && duration.inSeconds > 2;
+
+  Future<void> seekTo(Duration d) async {
+    if (!canSeek) return;
+    final max = duration;
+    if (d < Duration.zero) d = Duration.zero;
+    if (d > max) d = max;
+    try {
+      if (engine == Engine.exo) {
+        await exo?.seekTo(d);
+      } else {
+        await mpv?.seek(d);
+      }
+    } catch (_) {}
+    notifyListeners();
+  }
+
+  Future<void> seekBy(Duration delta) => seekTo(position + delta);
+
+  /// تبديل المشغل (الرئيسي ⇄ الاحتياطي)
+  Future<void> toggleEngine() =>
+      setEngine(engine == Engine.exo ? Engine.mpv : Engine.exo);
+
   String get qualityLabel =>
       (quality >= 0 && quality < qualities.length) ? qualities[quality].label : 'تلقائي';
 
@@ -290,6 +331,20 @@ class StreamView extends StatefulWidget {
 class _StreamViewState extends State<StreamView> {
   bool _visible = true;
   Timer? _timer;
+  Timer? _tick;
+  bool _dragging = false;
+  double _dragFrac = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    // تحديث شريط التقدم
+    _tick = Timer.periodic(const Duration(milliseconds: 500), (_) {
+      if (mounted && _visible && !_dragging && ctrl.status == PlayStatus.playing) {
+        setState(() {});
+      }
+    });
+  }
 
   StreamController2 get ctrl => widget.ctrl;
 
@@ -315,6 +370,7 @@ class _StreamViewState extends State<StreamView> {
   @override
   void dispose() {
     _timer?.cancel();
+    _tick?.cancel();
     super.dispose();
   }
 
@@ -376,27 +432,6 @@ class _StreamViewState extends State<StreamView> {
     );
   }
 
-  Widget _pill(String label, IconData icon, VoidCallback onTap) {
-    return Material(
-      color: Colors.black54,
-      borderRadius: BorderRadius.circular(20),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(20),
-        onTap: onTap,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-          child: Row(mainAxisSize: MainAxisSize.min, children: [
-            Icon(icon, color: Colors.white, size: 16),
-            const SizedBox(width: 5),
-            Text(label,
-                style: const TextStyle(
-                    color: Colors.white, fontSize: 12, fontWeight: FontWeight.w700)),
-          ]),
-        ),
-      ),
-    );
-  }
-
   Widget _overlay(bool playing) {
     return Stack(fit: StackFit.expand, children: [
       // شريط علوي: اسم القناة + مباشر
@@ -439,41 +474,144 @@ class _StreamViewState extends State<StreamView> {
           ]),
         ),
       ),
-      // زر التشغيل / الإيقاف في المنتصف
-      if (playing)
-        Center(
-          child: _roundBtn(
-            ctrl.paused ? Icons.play_arrow : Icons.pause,
-            () => _touch(ctrl.togglePlay),
-            size: 60,
-          ),
-        ),
-      // شريط سفلي: الجودة + ملء الشاشة
+      // شريط سفلي: أزرار التحكم + شريط التقدم (مثل مشغل ياسين تيفي)
       Positioned(
         bottom: 0,
         left: 0,
         right: 0,
-        child: Container(
-          padding: const EdgeInsets.fromLTRB(12, 18, 12, 8),
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.bottomCenter,
-              end: Alignment.topCenter,
-              colors: [Colors.black87, Colors.transparent],
+        child: Directionality(
+          textDirection: TextDirection.ltr,
+          child: Container(
+            padding: const EdgeInsets.fromLTRB(8, 24, 8, 4),
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.bottomCenter,
+                end: Alignment.topCenter,
+                colors: [Colors.black87, Colors.transparent],
+              ),
             ),
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  _iconBtn(Icons.replay_10, ctrl.canSeek
+                      ? () => _touch(() => ctrl.seekBy(const Duration(seconds: -10)))
+                      : null),
+                  _iconBtn(
+                    ctrl.paused ? Icons.play_arrow : Icons.pause,
+                    playing ? () => _touch(ctrl.togglePlay) : null,
+                    size: 32,
+                  ),
+                  _iconBtn(Icons.forward_10, ctrl.canSeek
+                      ? () => _touch(() => ctrl.seekBy(const Duration(seconds: 10)))
+                      : null),
+                  const SizedBox(width: 14),
+                  _iconBtn(Icons.sync_alt, () => _touch(ctrl.toggleEngine),
+                      tooltip: ctrl.engine == Engine.exo
+                          ? 'التبديل للمشغل الاحتياطي'
+                          : 'التبديل للمشغل الرئيسي'),
+                  _iconBtn(Icons.settings, () => _touch(widget.onQuality)),
+                  _iconBtn(
+                    widget.fullscreen ? Icons.fullscreen_exit : Icons.fullscreen,
+                    () => _touch(widget.onFullscreen),
+                  ),
+                ],
+              ),
+              if (ctrl.canSeek) _progress(),
+            ]),
           ),
-          child: Row(children: [
-            if (ctrl.qualities.isNotEmpty)
-              _pill(ctrl.qualityLabel, Icons.settings, () => _touch(widget.onQuality)),
-            const Spacer(),
-            _roundBtn(
-              widget.fullscreen ? Icons.fullscreen_exit : Icons.fullscreen,
-              () => _touch(widget.onFullscreen),
-              size: 36,
-            ),
-          ]),
         ),
       ),
+    ]);
+  }
+
+  Widget _iconBtn(IconData icon, VoidCallback? onTap,
+      {double size = 26, String? tooltip}) {
+    final enabled = onTap != null;
+    return IconButton(
+      onPressed: onTap,
+      tooltip: tooltip,
+      padding: EdgeInsets.zero,
+      constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
+      icon: Icon(icon,
+          size: size,
+          color: enabled ? Colors.white : Colors.white30,
+          shadows: const [Shadow(color: Colors.black87, blurRadius: 4)]),
+    );
+  }
+
+  String _fmt(Duration d) {
+    String two(int n) => n.toString().padLeft(2, '0');
+    final h = d.inHours;
+    final m = d.inMinutes.remainder(60);
+    final s = d.inSeconds.remainder(60);
+    return h > 0 ? '${two(h)}:${two(m)}:${two(s)}' : '${two(m)}:${two(s)}';
+  }
+
+  Widget _progress() {
+    final total = ctrl.duration;
+    final totalMs = total.inMilliseconds <= 0 ? 1 : total.inMilliseconds;
+    final double frac = _dragging
+        ? _dragFrac
+        : (ctrl.position.inMilliseconds / totalMs).clamp(0.0, 1.0).toDouble();
+    final shown = Duration(milliseconds: (frac * totalMs).round());
+
+    void seekFromDx(double dx, double width) {
+      _dragFrac = (dx / width).clamp(0.0, 1.0).toDouble();
+      setState(() {});
+    }
+
+    const labelStyle = TextStyle(
+        color: Colors.white,
+        fontSize: 11,
+        fontWeight: FontWeight.w700,
+        shadows: [Shadow(color: Colors.black87, blurRadius: 3)]);
+
+    return Row(children: [
+      SizedBox(
+          width: 44,
+          child: Text(_fmt(shown), textAlign: TextAlign.center, style: labelStyle)),
+      Expanded(
+        child: LayoutBuilder(builder: (_, c) {
+          final w = c.maxWidth;
+          return GestureDetector(
+            behavior: HitTestBehavior.opaque,
+            onTapUp: (d) {
+              final double f = (d.localPosition.dx / w).clamp(0.0, 1.0).toDouble();
+              _touch(() => ctrl.seekTo(Duration(milliseconds: (f * totalMs).round())));
+            },
+            onHorizontalDragStart: (d) {
+              _dragging = true;
+              seekFromDx(d.localPosition.dx, w);
+            },
+            onHorizontalDragUpdate: (d) => seekFromDx(d.localPosition.dx, w),
+            onHorizontalDragEnd: (_) {
+              final f = _dragFrac;
+              _dragging = false;
+              _touch(() => ctrl.seekTo(Duration(milliseconds: (f * totalMs).round())));
+            },
+            child: SizedBox(
+              height: 24,
+              child: Stack(alignment: Alignment.centerLeft, children: [
+                Container(height: 3, color: Colors.white30),
+                Container(height: 3, width: w * frac, color: const Color(0xFFE50914)),
+                Positioned(
+                  left: (w * frac - 6).clamp(0.0, w - 12).toDouble(),
+                  child: Container(
+                    width: 12,
+                    height: 12,
+                    decoration: const BoxDecoration(
+                        color: Color(0xFFE50914), shape: BoxShape.circle),
+                  ),
+                ),
+              ]),
+            ),
+          );
+        }),
+      ),
+      SizedBox(
+          width: 44,
+          child: Text(_fmt(total), textAlign: TextAlign.center, style: labelStyle)),
     ]);
   }
 
