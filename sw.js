@@ -1,5 +1,5 @@
 /* Service Worker بسيط لـ PWA */
-var CACHE_NAME = 'alfaham-live-v1';
+var CACHE_NAME = 'alfaham-live-v2';
 var urlsToCache = [
   './',
   './index.html',
