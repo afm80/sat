@@ -212,6 +212,15 @@ header.site-header .logo {
   line-height: 1.4;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
 }
+.ch-num {
+  display: inline-block;
+  min-width: 28px;
+  margin-left: 8px;
+  color: #9A9A9A;
+  font-weight: 900;
+  text-align: center;
+}
+.channel-card.active .ch-num { color: #fff; }
 .channel-card:hover {
   background: #2A2A2A;
   border-color: var(--brand-red);
@@ -1166,7 +1175,13 @@ function buildChannelCards() {
     var card = document.createElement('button');
     card.type = 'button';
     card.className = 'channel-card';
-    card.textContent = ch.name || ('قناة ' + (index + 1));
+    var num = document.createElement('span');
+    num.className = 'ch-num';
+    num.textContent = String(index + 1);
+    var label = document.createElement('span');
+    label.textContent = ch.name || ('قناة ' + (index + 1));
+    card.appendChild(num);
+    card.appendChild(label);
     card.dataset.index = index;
     if (index === currentChannelIndex) card.classList.add('active');
     card.addEventListener('click', function() { switchChannel(index); });
