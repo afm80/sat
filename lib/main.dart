@@ -203,21 +203,39 @@ class _HomePageState extends State<HomePage> {
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                child: Text(
-                  all[i].name,
-                  style: TextStyle(
-                    fontSize: 13,
-                    height: 1.4,
-                    color: active ? Colors.white : const Color(0xFFF1F1F1),
-                    fontWeight: active ? FontWeight.w900 : FontWeight.w700,
-                    shadows: const [
-                      Shadow(
-                          color: Color(0xE6000000),
-                          blurRadius: 3,
-                          offset: Offset(0, 1)),
-                    ],
+                child: Row(children: [
+                  SizedBox(
+                    width: 32,
+                    child: Text(
+                      '${i + 1}',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 13,
+                        height: 1.4,
+                        color: active ? Colors.white : const Color(0xFF9A9A9A),
+                        fontWeight: FontWeight.w900,
+                      ),
+                    ),
                   ),
-                ),
+                  const SizedBox(width: 6),
+                  Expanded(
+                    child: Text(
+                      all[i].name,
+                      style: TextStyle(
+                        fontSize: 13,
+                        height: 1.4,
+                        color: active ? Colors.white : const Color(0xFFF1F1F1),
+                        fontWeight: active ? FontWeight.w900 : FontWeight.w700,
+                        shadows: const [
+                          Shadow(
+                              color: Color(0xE6000000),
+                              blurRadius: 3,
+                              offset: Offset(0, 1)),
+                        ],
+                      ),
+                    ),
+                  ),
+                ]),
               ),
             ),
           ),
