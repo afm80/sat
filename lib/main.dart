@@ -16,7 +16,8 @@ const cardBorder = Color(0xFF2A2A2A);
 class Channel {
   final String name;
   final String url;
-  Channel(this.name, this.url);
+  final String? group; // عنوان القسم (للقنوات التلقائية فقط)
+  Channel(this.name, this.url, [this.group]);
 }
 
 Future<List<Channel>> loadChannels() async {
@@ -56,7 +57,8 @@ Future<List<Channel>> loadAutoChannels() async {
   try {
     final list = jsonDecode(text ?? '[]') as List;
     return list
-        .map((e) => Channel('${e['name']}', '${e['url']}'))
+        .map((e) => Channel('${e['name']}', '${e['url']}',
+            e['group']?.toString() ?? 'قنوات إضافية (تحديث تلقائي)'))
         .where((c) => c.name.isNotEmpty && c.url.startsWith('http'))
         .toList();
   } catch (_) {
@@ -159,15 +161,24 @@ class _HomePageState extends State<HomePage> {
   /// قائمة القنوات: اليدوية أولاً ثم التلقائية تحتها بعنوان فاصل
   Widget channelList() {
     final all = allChannels;
-    final hasAuto = autoChannels.isNotEmpty;
+    // صفوف القائمة: رقم = قناة، نص = عنوان قسم
+    final rows = <Object>[];
+    String? lastGroup;
+    for (var k = 0; k < all.length; k++) {
+      final g = all[k].group;
+      if (g != null && g != lastGroup) rows.add(g);
+      lastGroup = g;
+      rows.add(k);
+    }
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      itemCount: all.length + (hasAuto ? 1 : 0),
+      itemCount: rows.length,
       separatorBuilder: (_, __) => const SizedBox(height: 6),
       itemBuilder: (_, pos) {
-        // عنوان القسم التلقائي
-        if (hasAuto && pos == channels.length) {
+        final row = rows[pos];
+        // عنوان قسم
+        if (row is String) {
           return Padding(
             padding: const EdgeInsets.only(top: 10, bottom: 4),
             child: Row(children: [
@@ -175,7 +186,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Text(
-                  'قنوات إضافية (تحديث تلقائي)',
+                  row,
                   style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w700,
@@ -187,7 +198,7 @@ class _HomePageState extends State<HomePage> {
             ]),
           );
         }
-        final i = (hasAuto && pos > channels.length) ? pos - 1 : pos;
+        final i = row as int;
         final active = i == current;
         return Material(
           color: active ? brandRed : cardBg,
