@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:http/http.dart' as http;
 import 'package:media_kit/media_kit.dart';
 import 'stream_player.dart';
 
@@ -28,6 +31,37 @@ Future<List<Channel>> loadChannels() async {
     out.add(Channel(lines[i], lines[i + 1]));
   }
   return out;
+}
+
+/// رابط القنوات التلقائية (يحدّثه السكربت). عدّل اسم الحساب/الريبو إذا اختلف.
+const autoChannelsUrl =
+    'https://raw.githubusercontent.com/afm80/sat/main/assets/auto_channels.json';
+
+/// القنوات التلقائية: من الإنترنت أولاً (محدّثة)، وإن تعذر فمن النسخة المدمجة.
+Future<List<Channel>> loadAutoChannels() async {
+  String? text;
+  try {
+    final r = await http
+        .get(Uri.parse(autoChannelsUrl))
+        .timeout(const Duration(seconds: 8));
+    if (r.statusCode == 200) text = utf8.decode(r.bodyBytes);
+  } catch (_) {}
+  if (text == null) {
+    try {
+      text = await rootBundle.loadString('assets/auto_channels.json');
+    } catch (_) {
+      return [];
+    }
+  }
+  try {
+    final list = jsonDecode(text ?? '[]') as List;
+    return list
+        .map((e) => Channel('${e['name']}', '${e['url']}'))
+        .where((c) => c.name.isNotEmpty && c.url.startsWith('http'))
+        .toList();
+  } catch (_) {
+    return [];
+  }
 }
 
 void main() {
@@ -75,7 +109,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Channel> channels = [];
+  List<Channel> channels = []; // يدوية
+  List<Channel> autoChannels = []; // تلقائية (تظهر تحت اليدوية)
+  List<Channel> get allChannels => [...channels, ...autoChannels];
   int current = -1;
   bool fullscreen = false;
   final ctrl = StreamController2();
@@ -84,6 +120,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     loadChannels().then((c) => setState(() => channels = c));
+    loadAutoChannels().then((c) {
+      if (mounted) setState(() => autoChannels = c);
+    });
   }
 
   @override
@@ -114,17 +153,41 @@ class _HomePageState extends State<HomePage> {
 
   void select(int i) {
     setState(() => current = i);
-    ctrl.play(channels[i].url);
+    ctrl.play(allChannels[i].url);
   }
 
-  /// قائمة القنوات: تمرير عمودي، والمشغل ثابت في الأعلى
+  /// قائمة القنوات: اليدوية أولاً ثم التلقائية تحتها بعنوان فاصل
   Widget channelList() {
+    final all = allChannels;
+    final hasAuto = autoChannels.isNotEmpty;
     return ListView.separated(
       physics: const AlwaysScrollableScrollPhysics(),
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-      itemCount: channels.length,
+      itemCount: all.length + (hasAuto ? 1 : 0),
       separatorBuilder: (_, __) => const SizedBox(height: 6),
-      itemBuilder: (_, i) {
+      itemBuilder: (_, pos) {
+        // عنوان القسم التلقائي
+        if (hasAuto && pos == channels.length) {
+          return Padding(
+            padding: const EdgeInsets.only(top: 10, bottom: 4),
+            child: Row(children: [
+              const Expanded(child: Divider(color: cardBorder)),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  'قنوات إضافية (تحديث تلقائي)',
+                  style: const TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
+                    color: Color(0xFF9A9A9A),
+                  ),
+                ),
+              ),
+              const Expanded(child: Divider(color: cardBorder)),
+            ]),
+          );
+        }
+        final i = (hasAuto && pos > channels.length) ? pos - 1 : pos;
         final active = i == current;
         return Material(
           color: active ? brandRed : cardBg,
@@ -141,7 +204,7 @@ class _HomePageState extends State<HomePage> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 child: Text(
-                  channels[i].name,
+                  all[i].name,
                   style: TextStyle(
                     fontSize: 13,
                     height: 1.4,
@@ -165,9 +228,9 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final title = (current >= 0 && current < channels.length)
-        ? channels[current].name
-        : '';
+    final all = allChannels;
+    final title =
+        (current >= 0 && current < all.length) ? all[current].name : '';
 
     Widget player() => StreamView(
           ctrl: ctrl,
