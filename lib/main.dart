@@ -189,8 +189,21 @@ class _HomePageState extends State<HomePage> {
                   // الهيدر
                   Container(
                     height: 52,
-                    padding: const EdgeInsets.symmetric(vertical: 6),
-                    child: Image.asset('assets/logo.png'),
+                    width: double.infinity,
+                    color: brandBg,
+                    alignment: Alignment.center,
+                    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 12),
+                    // نفس شعار الويب (من الرابط نفسه)، ويرجع للشعار المحلي إذا لم يتوفر الإنترنت
+                    child: Image.network(
+                      'https://raw.githubusercontent.com/afm80/img/refs/heads/main/Alfaham%20sat.png',
+                      height: 40,
+                      fit: BoxFit.contain,
+                      errorBuilder: (_, __, ___) => Image.asset(
+                        'assets/logo.png',
+                        height: 40,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                   Container(
                     height: 3,
