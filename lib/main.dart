@@ -20,8 +20,23 @@ class Channel {
   Channel(this.name, this.url, [this.group]);
 }
 
-Future<List<Channel>> loadChannels() async {
-  final text = await rootBundle.loadString('assets/channels.txt');
+/// مكان ملفات القنوات على GitHub (عدّل اسم الحساب/الريبو إذا اختلف).
+const repoRawBase = 'https://raw.githubusercontent.com/afm80/sat/main';
+
+/// تحميل نص من الإنترنت (مع تجاوز الكاش)، أو null إذا فشل.
+Future<String?> _fetchRemote(String url) async {
+  try {
+    final uri = Uri.parse(url).replace(queryParameters: {
+      't': DateTime.now().millisecondsSinceEpoch.toString(),
+    });
+    final r = await http.get(uri).timeout(const Duration(seconds: 8));
+    if (r.statusCode == 200) return utf8.decode(r.bodyBytes);
+  } catch (_) {}
+  return null;
+}
+
+/// نفس صيغة الويب: سطر للاسم وتحته سطر للرابط.
+List<Channel> parseChannelsText(String text) {
   final lines = text
       .split('\n')
       .map((l) => l.trim())
@@ -34,19 +49,24 @@ Future<List<Channel>> loadChannels() async {
   return out;
 }
 
-/// رابط القنوات التلقائية (يحدّثه السكربت). عدّل اسم الحساب/الريبو إذا اختلف.
-const autoChannelsUrl =
-    'https://raw.githubusercontent.com/afm80/sat/main/assets/auto_channels.json';
+/// القنوات اليدوية: من assets/channels.txt على GitHub أولاً (تتحدث بدون APK جديد)،
+/// وإن تعذر الإنترنت تُستخدم النسخة المدمجة داخل التطبيق.
+Future<List<Channel>> loadChannels() async {
+  final remote = await _fetchRemote('$repoRawBase/assets/channels.txt');
+  if (remote != null) {
+    final list = parseChannelsText(remote);
+    if (list.isNotEmpty) return list;
+  }
+  final text = await rootBundle.loadString('assets/channels.txt');
+  return parseChannelsText(text);
+}
+
+/// رابط القنوات التلقائية (يحدّثها السكربت).
+const autoChannelsUrl = '$repoRawBase/assets/auto_channels.json';
 
 /// القنوات التلقائية: من الإنترنت أولاً (محدّثة)، وإن تعذر فمن النسخة المدمجة.
 Future<List<Channel>> loadAutoChannels() async {
-  String? text;
-  try {
-    final r = await http
-        .get(Uri.parse(autoChannelsUrl))
-        .timeout(const Duration(seconds: 8));
-    if (r.statusCode == 200) text = utf8.decode(r.bodyBytes);
-  } catch (_) {}
+  String? text = await _fetchRemote(autoChannelsUrl);
   if (text == null) {
     try {
       text = await rootBundle.loadString('assets/auto_channels.json');
