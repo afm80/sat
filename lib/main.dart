@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:media_kit/media_kit.dart';
+import 'stream_player.dart';
 
 const brandRed = Color(0xFF8B0000);
 const brandBg = Color(0xFF0F0F0F);
 const cardBg = Color(0xFF1C1C1C);
 const cardBorder = Color(0xFF2A2A2A);
+const btnBg = Color(0xFF2A2A2A);
 
 class Channel {
   final String name;
@@ -27,7 +30,11 @@ Future<List<Channel>> loadChannels() async {
   return out;
 }
 
-void main() => runApp(const AlfahamApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  MediaKit.ensureInitialized();
+  runApp(const AlfahamApp());
+}
 
 class AlfahamApp extends StatelessWidget {
   const AlfahamApp({super.key});
@@ -60,7 +67,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<Channel> channels = [];
   int current = -1;
-  bool primary = true; // الرئيسي ExoPlayer / الاحتياطي MPV (الخطوة 2)
+  final ctrl = StreamController2();
 
   @override
   void initState() {
@@ -68,7 +75,16 @@ class _HomePageState extends State<HomePage> {
     loadChannels().then((c) => setState(() => channels = c));
   }
 
-  void select(int i) => setState(() => current = i);
+  @override
+  void dispose() {
+    ctrl.dispose();
+    super.dispose();
+  }
+
+  void select(int i) {
+    setState(() => current = i);
+    ctrl.play(channels[i].url);
+  }
 
   void openMenu() {
     showModalBottomSheet(
@@ -94,6 +110,37 @@ class _HomePageState extends State<HomePage> {
           Expanded(child: channelList(closeOnTap: true)),
         ]),
       ),
+    );
+  }
+
+  void openQuality() {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: cardBg,
+      builder: (_) => SafeArea(
+        child: ListView(shrinkWrap: true, children: [
+          const Padding(
+            padding: EdgeInsets.all(12),
+            child: Text('الجودة',
+                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
+          ),
+          _qualityTile('تلقائي', -1),
+          for (var i = 0; i < ctrl.qualities.length; i++)
+            _qualityTile(ctrl.qualities[i].label, i),
+        ]),
+      ),
+    );
+  }
+
+  Widget _qualityTile(String label, int index) {
+    final active = ctrl.quality == index;
+    return ListTile(
+      title: Text(label),
+      trailing: active ? const Icon(Icons.check, color: brandRed) : null,
+      onTap: () {
+        Navigator.pop(context);
+        ctrl.setQuality(index);
+      },
     );
   }
 
@@ -128,12 +175,11 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget modeButton(String label, bool isPrimary) {
-    final active = primary == isPrimary;
+  Widget barButton(String label, VoidCallback onTap, {bool active = false}) {
     return ElevatedButton(
-      onPressed: () => setState(() => primary = isPrimary),
+      onPressed: onTap,
       style: ElevatedButton.styleFrom(
-        backgroundColor: active ? brandRed : const Color(0xFF2A2A2A),
+        backgroundColor: active ? brandRed : btnBg,
         foregroundColor: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
@@ -159,48 +205,46 @@ class _HomePageState extends State<HomePage> {
                   colors: [Colors.transparent, brandRed, Colors.transparent]),
             ),
           ),
-          // المشغل (مكان مؤقت للخطوة 2)
-          AspectRatio(
-            aspectRatio: 16 / 9,
-            child: Container(
-              color: Colors.black,
-              alignment: Alignment.center,
-              child: Text(
-                current < 0 ? 'اختر قناة' : channels[current].name,
-                style: const TextStyle(fontSize: 16),
-              ),
-            ),
-          ),
-          // شريط الأزرار
-          Container(
-            margin: const EdgeInsets.all(8),
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: cardBg,
-              border: Border.all(color: cardBorder),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Wrap(
-              spacing: 8,
-              runSpacing: 6,
-              alignment: WrapAlignment.center,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              children: [
-                modeButton('المشغل الرئيسي', true),
-                modeButton('المشغل الاحتياطي', false),
-                ElevatedButton(
-                  onPressed: openMenu,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF2A2A2A),
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8)),
-                  ),
-                  child: const Text('☰ قائمة القنوات',
-                      style: TextStyle(fontSize: 12)),
+          AnimatedBuilder(
+            animation: ctrl,
+            builder: (_, __) => Column(children: [
+              StreamView(ctrl: ctrl),
+              // شريط الأزرار
+              Container(
+                margin: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: cardBg,
+                  border: Border.all(color: cardBorder),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-              ],
-            ),
+                child: Wrap(
+                  spacing: 8,
+                  runSpacing: 6,
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: [
+                    barButton('المشغل الرئيسي', () => ctrl.setEngine(Engine.exo),
+                        active: ctrl.engine == Engine.exo),
+                    barButton('المشغل الاحتياطي', () => ctrl.setEngine(Engine.mpv),
+                        active: ctrl.engine == Engine.mpv),
+                    if (ctrl.status == PlayStatus.error)
+                      IconButton(
+                        onPressed: ctrl.retry,
+                        icon: const Icon(Icons.refresh, color: brandRed),
+                        tooltip: 'إعادة المحاولة',
+                      ),
+                    if (ctrl.qualities.isNotEmpty) barButton('الجودة', openQuality),
+                    barButton('☰ قائمة القنوات', openMenu),
+                  ],
+                ),
+              ),
+              if (ctrl.message.isNotEmpty)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 6),
+                  child: Text(ctrl.message, style: const TextStyle(fontSize: 13)),
+                ),
+            ]),
           ),
           // كروت القنوات
           Expanded(child: channelList()),
