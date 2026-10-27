@@ -130,84 +130,41 @@ header.site-header .logo {
   z-index: 1;
 }
 
+/* رسالة الحالة + زر إعادة المحاولة (فوق الفيديو) */
 #msg {
+  position: absolute;
+  left: 50%; bottom: 78px;
+  transform: translateX(-50%);
+  max-width: 90%;
+  z-index: 7;
   color: #fff;
   background: rgba(0,0,0,0.85);
-  padding: 8px 12px;
+  padding: 6px 12px;
   border-radius: 8px;
   font-size: 13px;
-  margin: 8px auto;
-  max-width: 600px;
   display: none;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  pointer-events: none;
 }
-
-/* ============ شريط الأزرار ============ */
-.players-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  justify-content: center;
-  margin: 8px auto;
-  padding: 8px 12px;
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  max-width: 900px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-}
-
-.primary-btn, .backup-btn, .channels-menu-btn {
-  border: 1px solid var(--card-border);
-  border-radius: 8px;
-  background: #2A2A2A;
-  color: var(--text-main);
-  padding: 8px 14px;
-  font: inherit;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  font-family: 'Cairo', sans-serif;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-}
-.primary-btn:hover, .backup-btn:hover, .channels-menu-btn:hover {
-  background: #3A3A3A;
-  border-color: var(--brand-red);
-  color: #fff;
-}
-.primary-btn.active, .backup-btn.active {
-  background: var(--brand-red);
-  color: #fff;
-  border-color: var(--brand-red);
-  font-weight: 900;
-}
-
 .retry-btn {
-  width: 34px;
-  height: 34px;
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 7;
+  width: 52px; height: 52px;
   padding: 0;
-  border: 1px solid var(--card-border);
+  border: 0;
   border-radius: 50%;
-  background: #2A2A2A;
-  color: var(--brand-red);
+  background: rgba(0,0,0,.65);
+  color: #fff;
   font: inherit;
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 900;
   line-height: 1;
   cursor: pointer;
-  transition: transform 0.2s ease, background 0.2s ease;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
 }
-.retry-btn:hover { background: #3A3A3A; transform: rotate(90deg); }
+.retry-btn:hover { background: var(--brand-red); }
 .retry-btn[hidden] { display: none; }
-
-.channels-menu-btn { display: none; }
-.channels-menu-btn.show { display: flex; }
 
 /* ============ الكروت ============ */
 .channels-section {
@@ -250,80 +207,6 @@ header.site-header .logo {
   font-weight: 900;
 }
 
-/* ============ Overlay قائمة القنوات ============ */
-.channels-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 99999;
-  display: none;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 0;
-}
-.channels-overlay.show { display: flex; }
-
-.channels-sheet {
-  width: 100%;
-  max-width: 600px;
-  max-height: 75vh;
-  background: var(--card-bg);
-  border-top: 2px solid var(--brand-red);
-  border-radius: 18px 18px 0 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  animation: sheet-up 0.25s ease-out;
-  padding-bottom: env(safe-area-inset-bottom, 0);
-}
-
-@keyframes sheet-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-
-.sheet-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--card-border);
-  background: #181818;
-  flex-shrink: 0;
-}
-.sheet-header h3 {
-  margin: 0;
-  font-size: 15px;
-  color: var(--brand-red);
-  font-weight: 900;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
-}
-.sheet-close {
-  background: #2A2A2A;
-  color: var(--text-main);
-  border: 0;
-  border-radius: 8px;
-  padding: 8px 14px;
-  font: inherit;
-  font-family: 'Cairo', sans-serif;
-  font-size: 13px;
-  font-weight: bold;
-  cursor: pointer;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-}
-.sheet-close:hover { background: #3A3A3A; }
-
-.sheet-body {
-  padding: 10px 12px 20px;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
 /* ============ الفوتر (غير ثابت) ============ */
 .site-footer {
   width: 100%;
@@ -361,26 +244,16 @@ header.site-header .logo {
 
   /* إضافة padding للـ body بقدر ارتفاع الثابت */
   body {
-    padding-top: calc(var(--header-h) + 3px + (100vw * 9 / 16) + 55px);
+    padding-top: calc(var(--header-h) + 3px + (100vw * 9 / 16) + 8px);
   }
 
   header.site-header .logo { max-height: 40px; }
 
-  .players-bar {
-    padding: 6px 8px;
-    gap: 6px;
-    margin: 6px auto;
-  }
-  .primary-btn, .backup-btn, .channels-menu-btn {
-    padding: 6px 10px;
-    font-size: 12px;
-  }
 
   .site-footer { font-size: 11px; padding: 8px 10px; }
 }
 
 /* ============ أزرار التحكم فوق الفيديو ============ */
-.players-bar .primary-btn, .players-bar .backup-btn { display: none; }
 
 #player .video-wrap:fullscreen { aspect-ratio: auto; width: 100%; height: 100%; }
 #player .video-wrap:-webkit-full-screen { aspect-ratio: auto; width: 100%; height: 100%; }
@@ -394,25 +267,45 @@ header.site-header .logo {
 .vc-ui.show { opacity: 1; pointer-events: auto; }
 .video-wrap.iframe-mode .vc-ui, .video-wrap.vc-idle .vc-ui { display: none; }
 
-.vc-top, .vc-bottom {
+.vc-top {
   position: absolute; left: 0; right: 0;
   display: flex; align-items: center; gap: 8px; padding: 10px 12px;
 }
 .vc-top { top: 0; padding-bottom: 22px; background: linear-gradient(to bottom, rgba(0,0,0,.85), transparent); }
-.vc-bottom { bottom: 0; padding-top: 22px; background: linear-gradient(to top, rgba(0,0,0,.85), transparent); }
+.vc-bottom {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 26px 0 0; direction: ltr;
+  background: linear-gradient(to top, rgba(0,0,0,.85), transparent);
+}
+.vc-controls {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  padding: 0 8px 4px; flex-wrap: nowrap;
+}
+.vc-sep { width: 14px; flex: 0 0 auto; }
+.vc-progress { display: flex; align-items: center; gap: 8px; padding: 0 8px 6px; color: #fff; font-size: 11px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.vc-progress[hidden] { display: none; }
+.vc-time { min-width: 38px; text-align: center; text-shadow: 0 1px 3px #000; }
+.vc-bar { position: relative; flex: 1; height: 22px; cursor: pointer; touch-action: none; }
+.vc-bar::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 3px; margin-top: -1.5px; background: rgba(255,255,255,.3); border-radius: 2px; }
+.vc-fill { position: absolute; left: 0; top: 50%; height: 3px; margin-top: -1.5px; width: 0; background: #e50914; border-radius: 2px; }
+.vc-knob { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; left: 0; background: #e50914; border-radius: 50%; }
 .vc-live { background: var(--brand-red, #8B0000); color: #fff; font-size: 11px; font-weight: 900; padding: 2px 8px; border-radius: 4px; }
 .vc-title { color: #fff; font-size: 14px; font-weight: 800; flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 3px #000; }
 .vc-spacer { flex: 1; }
 
 .vc-btn {
-  border: 0; background: rgba(0,0,0,.55); color: #fff; cursor: pointer;
-  width: 36px; height: 36px; border-radius: 50%;
+  border: 0; background: transparent; color: #fff; cursor: pointer;
+  width: 40px; height: 40px; border-radius: 50%; flex: 0 0 auto;
   display: flex; align-items: center; justify-content: center; padding: 0;
   transition: background .15s ease;
 }
 .vc-btn:hover { background: var(--brand-red, #8B0000); }
-.vc-btn svg { width: 55%; height: 55%; fill: #fff; }
-.vc-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; }
+.vc-btn svg { width: 62%; height: 62%; fill: #fff; filter: drop-shadow(0 1px 2px rgba(0,0,0,.8)); }
+.vc-btn[hidden] { display: none; }
+.vc-btn:disabled { opacity: .35; cursor: default; }
+.vc-btn:disabled:hover { background: transparent; }
+@media (max-width: 400px) { .vc-btn { width: 34px; height: 34px; } .vc-controls { gap: 3px; } .vc-sep { width: 8px; } }
+.vc-play svg { width: 74%; height: 74%; }
 .vc-pill {
   border: 0; background: rgba(0,0,0,.55); color: #fff; cursor: pointer;
   border-radius: 20px; padding: 6px 12px; font: inherit; font-size: 12px; font-weight: 700;
@@ -423,7 +316,7 @@ header.site-header .logo {
 .vc-pill[hidden] { display: none; }
 
 .vc-menu {
-  position: absolute; bottom: 54px; right: 12px; min-width: 130px; max-height: 70%;
+  position: absolute; bottom: 82px; right: 12px; min-width: 130px; max-height: 70%;
   overflow-y: auto; background: rgba(20,20,20,.96); border: 1px solid #2A2A2A;
   border-radius: 10px; padding: 4px; display: none; z-index: 6;
 }
@@ -466,44 +359,34 @@ header.site-header .logo {
           <span class="vc-live">مباشر</span>
           <span class="vc-title" id="vcTitle"></span>
         </div>
-        <button type="button" class="vc-btn vc-play" id="vcPlay" aria-label="تشغيل / إيقاف"></button>
         <div class="vc-menu" id="vcMenu"></div>
         <div class="vc-bottom">
-          <button type="button" class="vc-pill" id="vcQuality" hidden>
-            <svg viewBox="0 0 24 24"><path d="M19.4 13a7.9 7.9 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.9 7.9 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L11 21h4l.4-2.9a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM13 15.5A3.5 3.5 0 1 1 13 8.5a3.5 3.5 0 0 1 0 7z"/></svg>
-            <span id="vcQualityLabel">تلقائي</span>
-          </button>
-          <span class="vc-spacer"></span>
-          <button type="button" class="vc-btn" id="vcMute" aria-label="الصوت"></button>
-          <button type="button" class="vc-btn" id="vcFs" aria-label="ملء الشاشة"></button>
+          <div class="vc-controls">
+            <button type="button" class="vc-btn" id="vcBack" aria-label="رجوع 10 ثوان"></button>
+            <button type="button" class="vc-btn vc-play" id="vcPlay" aria-label="تشغيل / إيقاف"></button>
+            <button type="button" class="vc-btn" id="vcFwd" aria-label="تقديم 10 ثوان"></button>
+            <span class="vc-sep"></span>
+            <button type="button" class="vc-btn" id="vcCast" aria-label="بث إلى جهاز" hidden></button>
+            <button type="button" class="vc-btn" id="vcSwitch" aria-label="تبديل المشغل" title="تبديل المشغل"></button>
+            <button type="button" class="vc-btn" id="vcQuality" aria-label="الإعدادات / الجودة"></button>
+            <button type="button" class="vc-btn" id="vcFs" aria-label="ملء الشاشة"></button>
+            <button type="button" class="vc-btn" id="vcPip" aria-label="نافذة عائمة" hidden></button>
+          </div>
+          <div class="vc-progress" id="vcProgress" hidden>
+            <span class="vc-time" id="vcTimeCur">00:00</span>
+            <div class="vc-bar" id="vcBar"><div class="vc-fill" id="vcFill"></div><div class="vc-knob" id="vcKnob"></div></div>
+            <span class="vc-time" id="vcTimeEnd">00:00</span>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="players-bar">
-      <button type="button" class="primary-btn active" id="primaryBtn">المشغل الرئيسي</button>
-      <button type="button" class="backup-btn" id="backupBtn1">المشغل الاحتياطي</button>
       <button type="button" class="retry-btn" id="retryBtn" aria-label="إعادة المحاولة" title="إعادة المحاولة" hidden>↻</button>
-      <button type="button" class="channels-menu-btn" id="channelsMenuBtn">☰ قائمة القنوات</button>
+      <div id="msg"></div>
     </div>
-
-    <div id="msg"></div>
   </div>
 </div>
 
 <!-- كروت القنوات -->
 <section class="channels-section" id="channelsSection"></section>
-
-<!-- Overlay قائمة القنوات -->
-<div class="channels-overlay" id="channelsOverlay">
-  <div class="channels-sheet">
-    <div class="sheet-header">
-      <h3>☰ قائمة القنوات</h3>
-      <button class="sheet-close" id="sheetCloseBtn" type="button">إغلاق ✕</button>
-    </div>
-    <div class="sheet-body" id="sheetBody"></div>
-  </div>
-</div>
 
 <!-- الفوتر (غير ثابت) -->
 <footer class="site-footer">
@@ -1229,13 +1112,6 @@ function switchPlayer(player, automatic) {
   if (!automatic) fallbackCycle = 0;
   currentPlayer = player;
 
-  document.querySelectorAll('.primary-btn, .backup-btn').forEach(function(btn) {
-    btn.classList.remove('active');
-  });
-
-  if (player === 'primary') document.getElementById('primaryBtn').classList.add('active');
-  else if (player === 'backup1') document.getElementById('backupBtn1').classList.add('active');
-
   if (currentUrl) {
     if (player === 'primary') playPrimary(currentUrl);
     else if (player === 'backup1') playBackup1(currentUrl);
@@ -1273,58 +1149,6 @@ function buildChannelCards() {
     section.appendChild(card);
   });
 }
-
-function buildSheetBody() {
-  var body = document.getElementById('sheetBody');
-  if (!body) return;
-  body.innerHTML = '';
-  CHANNELS.forEach(function(ch, index) {
-    var card = document.createElement('button');
-    card.type = 'button';
-    card.className = 'channel-card';
-    card.textContent = ch.name || ('قناة ' + (index + 1));
-    card.dataset.index = index;
-    card.addEventListener('click', function() {
-      switchChannel(index);
-      closeChannelsOverlay();
-    });
-    body.appendChild(card);
-  });
-}
-
-var overlayEl = document.getElementById('channelsOverlay');
-var channelsMenuBtn = document.getElementById('channelsMenuBtn');
-var sheetCloseBtn = document.getElementById('sheetCloseBtn');
-
-function openChannelsOverlay() {
-  overlayEl.classList.add('show');
-  document.body.style.overflow = 'hidden';
-  document.querySelectorAll('.channel-card').forEach(function(card) {
-    card.classList.toggle('active', Number(card.dataset.index) === currentChannelIndex);
-  });
-}
-function closeChannelsOverlay() {
-  overlayEl.classList.remove('show');
-  document.body.style.overflow = '';
-}
-
-channelsMenuBtn.addEventListener('click', function(e) {
-  e.stopPropagation();
-  openChannelsOverlay();
-});
-sheetCloseBtn.addEventListener('click', closeChannelsOverlay);
-overlayEl.addEventListener('click', function(e) {
-  if (e.target === overlayEl) closeChannelsOverlay();
-});
-
-document.getElementById('primaryBtn').addEventListener('click', function() {
-  if (currentPlayer === 'primary') return;
-  switchPlayer('primary');
-});
-document.getElementById('backupBtn1').addEventListener('click', function() {
-  if (currentPlayer === 'backup1') return;
-  switchPlayer('backup1');
-});
 
 window.addEventListener('pagehide', stopAllPlayers);
 window.addEventListener('beforeunload', stopAllPlayers);
@@ -1386,14 +1210,7 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-function initChannelsMenuBtn() {
-  if (CHANNELS.length > 0) channelsMenuBtn.classList.add('show');
-  else channelsMenuBtn.classList.remove('show');
-}
-
 buildChannelCards();
-buildSheetBody();
-initChannelsMenuBtn();
 
 try { history.scrollRestoration = 'manual'; } catch(e){}
 if (CHANNELS.length > 0 && CHANNELS[0].url) switchChannel(0);
@@ -1407,17 +1224,32 @@ window.scrollTo(0, 0);
     vol: '<svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>',
     mute: '<svg viewBox="0 0 24 24"><path d="M16.5 12a4.5 4.5 0 0 0-2.5-4v2.2l2.5 2.5V12zM19 12a7 7 0 0 1-.9 3.4l1.5 1.5A9 9 0 0 0 21 12a9 9 0 0 0-7-8.8v2.1A7 7 0 0 1 19 12zM4.3 3 3 4.3 7.7 9H3v6h4l5 5v-6.7l4.3 4.3c-.7.5-1.4.9-2.3 1.2v2.1a9 9 0 0 0 3.7-1.8l2 2 1.3-1.3L4.3 3zM12 4 9.9 6.1 12 8.2V4z"/></svg>',
     fs: '<svg viewBox="0 0 24 24"><path d="M5 5h5v2H7v3H5V5zm9 0h5v5h-2V7h-3V5zM5 14h2v3h3v2H5v-5zm12 0h2v5h-5v-2h3v-3z"/></svg>',
-    fsExit: '<svg viewBox="0 0 24 24"><path d="M8 5v3H5v2h5V5H8zm6 0v5h5V8h-3V5h-2zM5 14v2h3v3h2v-5H5zm9 0v5h2v-3h3v-2h-5z"/></svg>'
+    fsExit: '<svg viewBox="0 0 24 24"><path d="M8 5v3H5v2h5V5H8zm6 0v5h5V8h-3V5h-2zM5 14v2h3v3h2v-5H5zm9 0v5h2v-3h3v-2h-5z"/></svg>',
+    back10: '<svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/><text x="12" y="16.6" text-anchor="middle" font-size="7.5" font-weight="700" font-family="sans-serif">10</text></svg>',
+    fwd10: '<svg viewBox="0 0 24 24"><path d="M12 5V1l5 5-5 5V7a6 6 0 1 0 6 6h2a8 8 0 1 1-8-8z"/><text x="12" y="16.6" text-anchor="middle" font-size="7.5" font-weight="700" font-family="sans-serif">10</text></svg>',
+    cast: '<svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v3h2V5h18v14h-7v2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM1 18v3h3a3 3 0 0 0-3-3zm0-4v2a5 5 0 0 1 5 5h2a7 7 0 0 0-7-7zm0-4v2a9 9 0 0 1 9 9h2a11 11 0 0 0-11-11z"/></svg>',
+    swap: '<svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0-7.7 6h2.1A6 6 0 0 1 12 6c1.7 0 3.2.7 4.2 1.8L14 10h6V4l-2.4 2.4A8 8 0 0 0 12 4zm7.7 10a6 6 0 0 1-10.9 2.2L11 14H5v6l2.4-2.4A8 8 0 0 0 19.7 14z"/></svg>',
+    gear: '<svg viewBox="0 0 24 24"><path d="M19.4 13a7.9 7.9 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.9 7.9 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L11 21h4l.4-2.9a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM13 15.5A3.5 3.5 0 1 1 13 8.5a3.5 3.5 0 0 1 0 7z"/></svg>',
+    pip: '<svg viewBox="0 0 24 24"><path d="M19 7h-8v6h8V7zm2-4H3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h18a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 16H3V5h18v14z"/></svg>'
   };
 
   var wrap = document.getElementById('videoWrap');
   var ui = document.getElementById('vcUi');
   var titleEl = document.getElementById('vcTitle');
   var playBtn = document.getElementById('vcPlay');
-  var muteBtn = document.getElementById('vcMute');
+  var backBtn = document.getElementById('vcBack');
+  var fwdBtn = document.getElementById('vcFwd');
+  var castBtn = document.getElementById('vcCast');
+  var switchBtn = document.getElementById('vcSwitch');
+  var pipBtn = document.getElementById('vcPip');
+  var progEl = document.getElementById('vcProgress');
+  var barEl = document.getElementById('vcBar');
+  var fillEl = document.getElementById('vcFill');
+  var knobEl = document.getElementById('vcKnob');
+  var tCur = document.getElementById('vcTimeCur');
+  var tEnd = document.getElementById('vcTimeEnd');
   var fsBtn = document.getElementById('vcFs');
   var qBtn = document.getElementById('vcQuality');
-  var qLabel = document.getElementById('vcQualityLabel');
   var menu = document.getElementById('vcMenu');
   var hideTimer = null;
 
@@ -1436,7 +1268,7 @@ window.scrollTo(0, 0);
 
   // لمس الفيديو: إظهار / إخفاء الأزرار
   wrap.addEventListener('click', function(e) {
-    if (e.target.closest('.vc-btn, .vc-pill, .vc-menu')) return;
+    if (e.target.closest('.vc-btn, .vc-menu, .vc-progress, .retry-btn')) return;
     if (menuOpen()) { closeMenu(); showUi(); return; }
     if (ui.classList.contains('show')) { ui.classList.remove('show'); clearTimeout(hideTimer); }
     else showUi();
@@ -1452,11 +1284,70 @@ window.scrollTo(0, 0);
     if (v.paused) v.play().catch(function(){}); else v.pause();
     refresh();
   }));
-  muteBtn.addEventListener('click', stop(function() {
-    var v = V(); if (!v) return;
-    v.muted = !v.muted;
-    if (!v.muted && v.volume === 0) v.volume = 1;
+
+  // نطاق التمرير (المباشر مع DVR)
+  function range(v) {
+    try {
+      if (v && v.seekable && v.seekable.length) {
+        var st = v.seekable.start(0), en = v.seekable.end(v.seekable.length - 1);
+        if (isFinite(st) && isFinite(en) && en - st > 1) return { start: st, end: en };
+      }
+    } catch(e) {}
+    return null;
+  }
+  function seekBy(d) {
+    var v = V(), r = range(v); if (!v || !r) return;
+    v.currentTime = Math.max(r.start, Math.min(r.end, v.currentTime + d));
     refresh();
+  }
+  backBtn.addEventListener('click', stop(function() { seekBy(-10); }));
+  fwdBtn.addEventListener('click', stop(function() { seekBy(10); }));
+
+  function fmt(t) {
+    t = Math.max(0, Math.floor(t));
+    var h = Math.floor(t / 3600), m = Math.floor(t % 3600 / 60), sec = t % 60;
+    function z(n) { return (n < 10 ? '0' : '') + n; }
+    return (h ? z(h) + ':' : '') + z(m) + ':' + z(sec);
+  }
+  function seekFromEvent(e) {
+    var v = V(), r = range(v); if (!v || !r) return;
+    var b = barEl.getBoundingClientRect();
+    var x = (e.touches ? e.touches[0].clientX : e.clientX);
+    var f = Math.max(0, Math.min(1, (x - b.left) / b.width));
+    v.currentTime = r.start + f * (r.end - r.start);
+    refresh();
+  }
+  var dragging = false;
+  barEl.addEventListener('pointerdown', function(e) {
+    e.stopPropagation(); dragging = true;
+    try { barEl.setPointerCapture(e.pointerId); } catch(err) {}
+    seekFromEvent(e); showUi();
+  });
+  barEl.addEventListener('pointermove', function(e) { if (dragging) seekFromEvent(e); });
+  barEl.addEventListener('pointerup', function() { dragging = false; showUi(); });
+  barEl.addEventListener('pointercancel', function() { dragging = false; });
+
+  // تبديل المشغل (الرئيسي / الاحتياطي)
+  switchBtn.addEventListener('click', stop(function() {
+    switchPlayer(currentPlayer === 'primary' ? 'backup1' : 'primary');
+  }));
+
+  // البث إلى جهاز (Cast / AirPlay)
+  castBtn.addEventListener('click', stop(function() {
+    var v = V(); if (!v) return;
+    try {
+      if (v.remote && v.remote.prompt) v.remote.prompt().catch(function(){});
+      else if (v.webkitShowPlaybackTargetPicker) v.webkitShowPlaybackTargetPicker();
+    } catch(e) {}
+  }));
+
+  // نافذة عائمة (Picture in Picture)
+  pipBtn.addEventListener('click', stop(function() {
+    var v = V(); if (!v) return;
+    try {
+      if (document.pictureInPictureElement) document.exitPictureInPicture().catch(function(){});
+      else if (v.requestPictureInPicture) v.requestPictureInPicture().catch(function(){});
+    } catch(e) {}
   }));
 
   // ملء الشاشة
@@ -1542,8 +1433,7 @@ window.scrollTo(0, 0);
 
   qBtn.addEventListener('click', stop(function() {
     if (menuOpen()) { closeMenu(); return; }
-    var q = getQualities();
-    if (!q) return;
+    var q = getQualities() || { items: [], current: -1, select: function() {} };
     buildMenu(q);
     menu.classList.add('open');
   }));
@@ -1556,18 +1446,32 @@ window.scrollTo(0, 0);
     if (idle || !v) return;
 
     playBtn.innerHTML = v.paused ? ICON.play : ICON.pause;
-    muteBtn.innerHTML = (v.muted || v.volume === 0) ? ICON.mute : ICON.vol;
     fsBtn.innerHTML = fsEl() ? ICON.fsExit : ICON.fs;
+    backBtn.innerHTML = ICON.back10;
+    fwdBtn.innerHTML = ICON.fwd10;
+    castBtn.innerHTML = ICON.cast;
+    switchBtn.innerHTML = ICON.swap;
+    qBtn.innerHTML = ICON.gear;
+    pipBtn.innerHTML = ICON.pip;
+
+    var canCast = !!((v.remote && v.remote.prompt) || v.webkitShowPlaybackTargetPicker);
+    castBtn.hidden = !canCast;
+    pipBtn.hidden = !(document.pictureInPictureEnabled && v.requestPictureInPicture);
+
+    var r = range(v);
+    backBtn.disabled = fwdBtn.disabled = !r;
+    progEl.hidden = !r;
+    if (r) {
+      var cur = Math.max(r.start, Math.min(r.end, v.currentTime));
+      var f = (cur - r.start) / (r.end - r.start);
+      fillEl.style.width = (f * 100) + '%';
+      knobEl.style.left = (f * 100) + '%';
+      tCur.textContent = fmt(cur - r.start);
+      tEnd.textContent = fmt(r.end - r.start);
+    }
 
     var ch = CHANNELS[currentChannelIndex];
     titleEl.textContent = ch ? ch.name : '';
-
-    var q = getQualities();
-    qBtn.hidden = !q;
-    if (q) {
-      var cur = q.items.filter(function(i) { return i.id === q.current; })[0];
-      qLabel.textContent = cur ? cur.label : 'تلقائي';
-    } else closeMenu();
 
     var buffering = !v.paused && !v.ended && v.readyState < 3 && !wrap.classList.contains('iframe-mode');
     wrap.classList.toggle('vc-buffering', buffering);
