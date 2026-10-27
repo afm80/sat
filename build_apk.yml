@@ -46,9 +46,16 @@ jobs:
 
       - run: flutter pub get
 
-      - run: flutter build apk --release
+      - name: Generate app icon
+        run: dart run flutter_launcher_icons
+
+      - name: Build one universal APK (all devices)
+        run: flutter build apk --release
+
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/alfaham-sat.apk
 
       - uses: actions/upload-artifact@v4
         with:
           name: alfaham-sat-apk
-          path: build/app/outputs/flutter-apk/*.apk
+          path: build/app/outputs/flutter-apk/alfaham-sat.apk

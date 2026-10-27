@@ -16,9 +16,24 @@ dependencies:
   media_kit_video: ^1.2.5
   media_kit_libs_video: ^1.0.5
   http: ^1.2.2
+  flutter_svg: ^2.0.10+1
+  google_fonts: ^6.2.1
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
+
+# أيقونة التطبيق (تُولَّد تلقائياً أثناء البناء)
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/logo.png"
+  adaptive_icon_background: "#0F0F0F"
+  adaptive_icon_foreground: "assets/icon_foreground.png"
+  min_sdk_android: 21
 
 flutter:
   uses-material-design: true
   assets:
     - assets/channels.txt
     - assets/logo.png
+    - assets/icon_foreground.png
