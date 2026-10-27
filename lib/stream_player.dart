@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:ui' show FontFeature, ImageFilter;
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart' as http;
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
@@ -308,20 +310,130 @@ class StreamController2 extends ChangeNotifier {
   }
 }
 
-/// واجهة عرض الفيديو مع أزرار التحكم (تشغيل/إيقاف، الجودة، ملء الشاشة)
+// =====================================================================
+//  واجهة المشغل — مطابقة لتصميم أزرار الويب (index.html)
+//  نفس الأيقونات (SVG) ونفس الأحجام والألوان والخط (Cairo)
+// =====================================================================
+
+const _vcRed = Color(0xFF8B0000); // --brand-red
+const _vcBar = Color(0xFFE50914); // شريط التقدم
+
+// نفس أيقونات الويب بالضبط (الرقم 10 يُرسم كنص فوق الأيقونة)
+const Map<String, String> _svg = {
+  'play': '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>',
+  'pause': '<svg viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>',
+  'fs': '<svg viewBox="0 0 24 24"><path d="M5 5h5v2H7v3H5V5zm9 0h5v5h-2V7h-3V5zM5 14h2v3h3v2H5v-5zm12 0h2v5h-5v-2h3v-3z"/></svg>',
+  'fsExit': '<svg viewBox="0 0 24 24"><path d="M8 5v3H5v2h5V5H8zm6 0v5h5V8h-3V5h-2zM5 14v2h3v3h2v-5H5zm9 0v5h2v-3h3v-2h-5z"/></svg>',
+  'back10': '<svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg>',
+  'fwd10': '<svg viewBox="0 0 24 24"><path d="M12 5V1l5 5-5 5V7a6 6 0 1 0 6 6h2a8 8 0 1 1-8-8z"/></svg>',
+  'swap': '<svg viewBox="0 0 24 24"><path d="M12 4a8 8 0 0 0-7.7 6h2.1A6 6 0 0 1 12 6c1.7 0 3.2.7 4.2 1.8L14 10h6V4l-2.4 2.4A8 8 0 0 0 12 4zm7.7 10a6 6 0 0 1-10.9 2.2L11 14H5v6l2.4-2.4A8 8 0 0 0 19.7 14z"/></svg>',
+  'gear': '<svg viewBox="0 0 24 24"><path d="M19.4 13a7.9 7.9 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.6 7.6 0 0 0-1.7-1L15 3h-4l-.4 2.9a7.6 7.6 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.9 7.9 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.6 7.6 0 0 0 1.7 1L11 21h4l.4-2.9a7.6 7.6 0 0 0 1.7-1l2.5 1 2-3.5zM13 15.5A3.5 3.5 0 1 1 13 8.5a3.5 3.5 0 0 1 0 7z"/></svg>',
+};
+
+/// أيقونة بيضاء مع ظل خفيف (مثل drop-shadow في الويب)
+class _VcIcon extends StatelessWidget {
+  final String svg;
+  final double size;
+  final String? label;
+  const _VcIcon(this.svg, this.size, {this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    Widget glyph(Color c) => SvgPicture.string(svg,
+        width: size,
+        height: size,
+        colorFilter: ColorFilter.mode(c, BlendMode.srcIn));
+    return SizedBox(
+      width: size,
+      height: size,
+      child: Stack(children: [
+        Transform.translate(
+          offset: const Offset(0, 1),
+          child: ImageFiltered(
+            imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+            child: Opacity(opacity: 0.8, child: glyph(Colors.black)),
+          ),
+        ),
+        glyph(Colors.white),
+        if (label != null)
+          Align(
+            alignment: const Alignment(0, 0.17),
+            child: Text(label!,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: size * 7.5 / 24,
+                    fontWeight: FontWeight.w700,
+                    height: 1)),
+          ),
+      ]),
+    );
+  }
+}
+
+/// زر دائري مثل .vc-btn في الويب: 40px (34px على الشاشات الضيقة)،
+/// شفاف، ويصبح أحمر عند اللمس، وبـ opacity 35% عند التعطيل
+class _VcBtn extends StatefulWidget {
+  final String svg;
+  final VoidCallback? onTap;
+  final double scale;
+  final String? label;
+  final String? tooltip;
+  const _VcBtn({
+    required this.svg,
+    required this.onTap,
+    this.scale = 0.62,
+    this.label,
+    this.tooltip,
+  });
+
+  @override
+  State<_VcBtn> createState() => _VcBtnState();
+}
+
+class _VcBtnState extends State<_VcBtn> {
+  bool _down = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final d = MediaQuery.of(context).size.width <= 400 ? 34.0 : 40.0;
+    final enabled = widget.onTap != null;
+    Widget btn = GestureDetector(
+      behavior: HitTestBehavior.opaque,
+      onTapDown: enabled ? (_) => setState(() => _down = true) : null,
+      onTapUp: enabled ? (_) => setState(() => _down = false) : null,
+      onTapCancel: enabled ? () => setState(() => _down = false) : null,
+      onTap: widget.onTap,
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 150),
+        width: d,
+        height: d,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: _down ? _vcRed : Colors.transparent,
+        ),
+        child: _VcIcon(widget.svg, d * widget.scale, label: widget.label),
+      ),
+    );
+    if (widget.tooltip != null) {
+      btn = Tooltip(message: widget.tooltip!, child: btn);
+    }
+    return Opacity(opacity: enabled ? 1 : 0.35, child: btn);
+  }
+}
+
+/// واجهة عرض الفيديو مع أزرار التحكم
 class StreamView extends StatefulWidget {
   final StreamController2 ctrl;
   final String title;
   final bool fullscreen;
   final VoidCallback onFullscreen;
-  final VoidCallback onQuality;
   const StreamView({
     super.key,
     required this.ctrl,
     required this.title,
     required this.fullscreen,
     required this.onFullscreen,
-    required this.onQuality,
   });
 
   @override
@@ -330,6 +442,7 @@ class StreamView extends StatefulWidget {
 
 class _StreamViewState extends State<StreamView> {
   bool _visible = true;
+  bool _menu = false; // قائمة الجودة
   Timer? _timer;
   Timer? _tick;
   bool _dragging = false;
@@ -350,14 +463,23 @@ class _StreamViewState extends State<StreamView> {
 
   void _restartTimer() {
     _timer?.cancel();
-    _timer = Timer(const Duration(seconds: 4), () {
-      if (mounted && ctrl.status == PlayStatus.playing && !ctrl.paused) {
+    _timer = Timer(const Duration(milliseconds: 3500), () {
+      if (mounted && ctrl.status == PlayStatus.playing && !ctrl.paused && !_menu) {
         setState(() => _visible = false);
       }
     });
   }
 
-  void _toggle() {
+  // لمس الفيديو: إظهار / إخفاء الأزرار (وإغلاق القائمة إن كانت مفتوحة)
+  void _onVideoTap() {
+    if (_menu) {
+      setState(() {
+        _menu = false;
+        _visible = true;
+      });
+      _restartTimer();
+      return;
+    }
     setState(() => _visible = !_visible);
     if (_visible) _restartTimer();
   }
@@ -381,78 +503,224 @@ class _StreamViewState extends State<StreamView> {
 
     final body = Container(
       color: Colors.black,
-      child: GestureDetector(
-        behavior: HitTestBehavior.translucent,
-        onTap: _toggle,
-        child: Stack(fit: StackFit.expand, children: [
-          _video(),
-          if (ctrl.status == PlayStatus.loading)
-            const Center(
-                child: CircularProgressIndicator(color: Color(0xFF8B0000))),
-          if (ctrl.status == PlayStatus.idle)
-            const Center(child: Text('اختر قناة', style: TextStyle(fontSize: 16))),
-          if (ctrl.status == PlayStatus.error)
-            Center(
-              child: Column(mainAxisSize: MainAxisSize.min, children: [
-                Text(ctrl.message, style: const TextStyle(fontSize: 14)),
-                const SizedBox(height: 8),
-                _roundBtn(Icons.refresh, ctrl.retry, size: 44),
-              ]),
-            ),
-          if (ctrl.status != PlayStatus.idle)
-            IgnorePointer(
-              ignoring: !showControls,
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 200),
-                opacity: showControls ? 1 : 0,
-                child: _overlay(playing),
+      child: LayoutBuilder(builder: (context, box) {
+        final upper = (box.maxHeight - 90).clamp(0.0, double.infinity).toDouble();
+        final menuMaxH = (box.maxHeight * 0.7).clamp(0.0, upper).toDouble();
+        return GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          onTap: _onVideoTap,
+          child: Stack(fit: StackFit.expand, children: [
+            _video(),
+            if (ctrl.status == PlayStatus.loading)
+              const Center(
+                child: SizedBox(
+                  width: 42,
+                  height: 42,
+                  child: CircularProgressIndicator(
+                    strokeWidth: 4,
+                    color: _vcRed,
+                    backgroundColor: Color(0x40FFFFFF),
+                  ),
+                ),
               ),
-            ),
-        ]),
-      ),
+            if (ctrl.status == PlayStatus.idle)
+              const Center(
+                  child: Text('اختر قناة',
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700))),
+            if (ctrl.status != PlayStatus.idle)
+              IgnorePointer(
+                ignoring: !showControls,
+                child: AnimatedOpacity(
+                  duration: const Duration(milliseconds: 200),
+                  opacity: showControls ? 1 : 0,
+                  child: _overlay(playing),
+                ),
+              ),
+            // زر إعادة المحاولة (مثل .retry-btn)
+            if (ctrl.status == PlayStatus.error)
+              Center(
+                child: Material(
+                  color: const Color(0xA6000000),
+                  shape: const CircleBorder(),
+                  child: InkWell(
+                    customBorder: const CircleBorder(),
+                    highlightColor: _vcRed,
+                    splashColor: _vcRed,
+                    onTap: ctrl.retry,
+                    child: const SizedBox(
+                      width: 52,
+                      height: 52,
+                      child: Center(
+                        child: Text('↻',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 26,
+                                fontWeight: FontWeight.w900,
+                                height: 1)),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            // رسالة الحالة (مثل #msg)
+            if (ctrl.message.isNotEmpty && ctrl.status != PlayStatus.idle)
+              Positioned(
+                left: 0,
+                right: 0,
+                bottom: 78,
+                child: IgnorePointer(
+                  child: Center(
+                    child: Container(
+                      constraints: BoxConstraints(maxWidth: box.maxWidth * 0.9),
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      decoration: BoxDecoration(
+                        color: const Color(0xD9000000),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Text(ctrl.message,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 13,
+                              shadows: [
+                                Shadow(
+                                    color: Color(0xE6000000),
+                                    blurRadius: 3,
+                                    offset: Offset(0, 1))
+                              ])),
+                    ),
+                  ),
+                ),
+              ),
+            // قائمة الجودة (مثل .vc-menu)
+            if (_menu && showControls && playing)
+              Positioned(bottom: 82, right: 12, child: _menuWidget(menuMaxH)),
+          ]),
+        );
+      }),
     );
 
     if (widget.fullscreen) return SizedBox.expand(child: body);
     return AspectRatio(aspectRatio: 16 / 9, child: body);
   }
 
-  Widget _roundBtn(IconData icon, VoidCallback onTap, {double size = 40}) {
-    return Material(
-      color: Colors.black54,
-      shape: const CircleBorder(),
-      child: InkWell(
-        customBorder: const CircleBorder(),
-        onTap: onTap,
-        child: SizedBox(
-          width: size,
-          height: size,
-          child: Icon(icon, color: Colors.white, size: size * 0.6),
+  // ---------- قائمة الجودة ----------
+  Widget _menuWidget(double maxH) {
+    final items = <MapEntry<int, String>>[
+      const MapEntry(-1, 'تلقائي'),
+      for (var i = 0; i < ctrl.qualities.length; i++)
+        MapEntry(i, ctrl.qualities[i].label),
+    ];
+    return Container(
+      constraints: BoxConstraints(minWidth: 130, maxHeight: maxH),
+      padding: const EdgeInsets.all(4),
+      decoration: BoxDecoration(
+        color: const Color(0xF5141414),
+        border: Border.all(color: const Color(0xFF2A2A2A)),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: SingleChildScrollView(
+        child: IntrinsicWidth(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [for (final it in items) _menuItem(it)],
+          ),
         ),
       ),
     );
   }
 
+  Widget _menuItem(MapEntry<int, String> it) {
+    final on = ctrl.quality == it.key;
+    return Material(
+      color: on ? _vcRed : Colors.transparent,
+      borderRadius: BorderRadius.circular(6),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(6),
+        hoverColor: const Color(0xFF2A2A2A),
+        onTap: () {
+          setState(() => _menu = false);
+          ctrl.setQuality(it.key);
+          _restartTimer();
+        },
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+          child: Text(on ? '${it.value} ✓' : it.value,
+              textAlign: TextAlign.right,
+              style: const TextStyle(
+                  color: Colors.white, fontSize: 13, fontWeight: FontWeight.w700)),
+        ),
+      ),
+    );
+  }
+
+  // ---------- الطبقة العلوية (شريط علوي + أزرار سفلية) ----------
   Widget _overlay(bool playing) {
+    final narrow = MediaQuery.of(context).size.width <= 400;
+    final gap = narrow ? 3.0 : 6.0;
+    final sep = narrow ? 8.0 : 14.0;
+
+    final controls = <Widget>[
+      _VcBtn(
+        svg: _svg['back10']!,
+        label: '10',
+        onTap: ctrl.canSeek
+            ? () => _touch(() => ctrl.seekBy(const Duration(seconds: -10)))
+            : null,
+      ),
+      _VcBtn(
+        svg: ctrl.paused ? _svg['play']! : _svg['pause']!,
+        scale: 0.74,
+        onTap: playing ? () => _touch(ctrl.togglePlay) : null,
+      ),
+      _VcBtn(
+        svg: _svg['fwd10']!,
+        label: '10',
+        onTap: ctrl.canSeek
+            ? () => _touch(() => ctrl.seekBy(const Duration(seconds: 10)))
+            : null,
+      ),
+      SizedBox(width: sep),
+      _VcBtn(
+        svg: _svg['swap']!,
+        tooltip: 'تبديل المشغل',
+        onTap: () => _touch(ctrl.toggleEngine),
+      ),
+      _VcBtn(
+        svg: _svg['gear']!,
+        onTap: () => _touch(() => setState(() => _menu = !_menu)),
+      ),
+      _VcBtn(
+        svg: widget.fullscreen ? _svg['fsExit']! : _svg['fs']!,
+        onTap: () => _touch(widget.onFullscreen),
+      ),
+    ];
+    final row = <Widget>[];
+    for (var i = 0; i < controls.length; i++) {
+      if (i > 0) row.add(SizedBox(width: gap));
+      row.add(controls[i]);
+    }
+
     return Stack(fit: StackFit.expand, children: [
-      // شريط علوي: اسم القناة + مباشر
+      // الشريط العلوي: مباشر + اسم القناة
       Positioned(
         top: 0,
         left: 0,
         right: 0,
         child: Container(
-          padding: const EdgeInsets.fromLTRB(12, 8, 12, 18),
+          padding: const EdgeInsets.fromLTRB(12, 10, 12, 22),
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
-              colors: [Colors.black87, Colors.transparent],
+              colors: [Color(0xD9000000), Colors.transparent],
             ),
           ),
           child: Row(children: [
             Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
               decoration: BoxDecoration(
-                color: const Color(0xFF8B0000),
+                color: _vcRed,
                 borderRadius: BorderRadius.circular(4),
               ),
               child: const Text('مباشر',
@@ -469,12 +737,18 @@ class _StreamViewState extends State<StreamView> {
                   style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
-                      fontWeight: FontWeight.w800)),
+                      fontWeight: FontWeight.w900,
+                      shadows: [
+                        Shadow(
+                            color: Colors.black,
+                            blurRadius: 3,
+                            offset: Offset(0, 1))
+                      ])),
             ),
           ]),
         ),
       ),
-      // شريط سفلي: أزرار التحكم + شريط التقدم (مثل مشغل ياسين تيفي)
+      // الشريط السفلي: الأزرار + شريط التقدم
       Positioned(
         bottom: 0,
         left: 0,
@@ -482,62 +756,32 @@ class _StreamViewState extends State<StreamView> {
         child: Directionality(
           textDirection: TextDirection.ltr,
           child: Container(
-            padding: const EdgeInsets.fromLTRB(8, 24, 8, 4),
+            padding: const EdgeInsets.only(top: 26),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.bottomCenter,
                 end: Alignment.topCenter,
-                colors: [Colors.black87, Colors.transparent],
+                colors: [Color(0xD9000000), Colors.transparent],
               ),
             ),
             child: Column(mainAxisSize: MainAxisSize.min, children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  _iconBtn(Icons.replay_10, ctrl.canSeek
-                      ? () => _touch(() => ctrl.seekBy(const Duration(seconds: -10)))
-                      : null),
-                  _iconBtn(
-                    ctrl.paused ? Icons.play_arrow : Icons.pause,
-                    playing ? () => _touch(ctrl.togglePlay) : null,
-                    size: 32,
-                  ),
-                  _iconBtn(Icons.forward_10, ctrl.canSeek
-                      ? () => _touch(() => ctrl.seekBy(const Duration(seconds: 10)))
-                      : null),
-                  const SizedBox(width: 14),
-                  _iconBtn(Icons.sync_alt, () => _touch(ctrl.toggleEngine),
-                      tooltip: ctrl.engine == Engine.exo
-                          ? 'التبديل للمشغل الاحتياطي'
-                          : 'التبديل للمشغل الرئيسي'),
-                  _iconBtn(Icons.settings, () => _touch(widget.onQuality)),
-                  _iconBtn(
-                    widget.fullscreen ? Icons.fullscreen_exit : Icons.fullscreen,
-                    () => _touch(widget.onFullscreen),
-                  ),
-                ],
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 0, 8, 4),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: row,
+                ),
               ),
-              if (ctrl.canSeek) _progress(),
+              if (ctrl.canSeek)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8, 0, 8, 6),
+                  child: _progress(),
+                ),
             ]),
           ),
         ),
       ),
     ]);
-  }
-
-  Widget _iconBtn(IconData icon, VoidCallback? onTap,
-      {double size = 26, String? tooltip}) {
-    final enabled = onTap != null;
-    return IconButton(
-      onPressed: onTap,
-      tooltip: tooltip,
-      padding: EdgeInsets.zero,
-      constraints: const BoxConstraints(minWidth: 40, minHeight: 40),
-      icon: Icon(icon,
-          size: size,
-          color: enabled ? Colors.white : Colors.white30,
-          shadows: const [Shadow(color: Colors.black87, blurRadius: 4)]),
-    );
   }
 
   String _fmt(Duration d) {
@@ -565,12 +809,17 @@ class _StreamViewState extends State<StreamView> {
         color: Colors.white,
         fontSize: 11,
         fontWeight: FontWeight.w700,
-        shadows: [Shadow(color: Colors.black87, blurRadius: 3)]);
+        fontFeatures: [FontFeature.tabularFigures()],
+        shadows: [Shadow(color: Colors.black, blurRadius: 3, offset: Offset(0, 1))]);
+
+    Widget time(Duration d) => ConstrainedBox(
+          constraints: const BoxConstraints(minWidth: 38),
+          child: Text(_fmt(d), textAlign: TextAlign.center, style: labelStyle),
+        );
 
     return Row(children: [
-      SizedBox(
-          width: 44,
-          child: Text(_fmt(shown), textAlign: TextAlign.center, style: labelStyle)),
+      time(shown),
+      const SizedBox(width: 8),
       Expanded(
         child: LayoutBuilder(builder: (_, c) {
           final w = c.maxWidth;
@@ -591,17 +840,30 @@ class _StreamViewState extends State<StreamView> {
               _touch(() => ctrl.seekTo(Duration(milliseconds: (f * totalMs).round())));
             },
             child: SizedBox(
-              height: 24,
+              height: 22,
               child: Stack(alignment: Alignment.centerLeft, children: [
-                Container(height: 3, color: Colors.white30),
-                Container(height: 3, width: w * frac, color: const Color(0xFFE50914)),
+                Container(
+                  height: 3,
+                  decoration: BoxDecoration(
+                    color: const Color(0x4DFFFFFF),
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                Container(
+                  height: 3,
+                  width: w * frac,
+                  decoration: BoxDecoration(
+                    color: _vcBar,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
                 Positioned(
-                  left: (w * frac - 6).clamp(0.0, w - 12).toDouble(),
+                  left: w * frac - 6,
                   child: Container(
                     width: 12,
                     height: 12,
                     decoration: const BoxDecoration(
-                        color: Color(0xFFE50914), shape: BoxShape.circle),
+                        color: _vcBar, shape: BoxShape.circle),
                   ),
                 ),
               ]),
@@ -609,9 +871,8 @@ class _StreamViewState extends State<StreamView> {
           );
         }),
       ),
-      SizedBox(
-          width: 44,
-          child: Text(_fmt(total), textAlign: TextAlign.center, style: labelStyle)),
+      const SizedBox(width: 8),
+      time(total),
     ]);
   }
 

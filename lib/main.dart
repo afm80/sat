@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:media_kit/media_kit.dart';
 import 'stream_player.dart';
 
@@ -35,6 +36,16 @@ void main() {
   runApp(const AlfahamApp());
 }
 
+/// نفس خط الويب: Cairo
+ThemeData _buildTheme() {
+  final base = ThemeData.dark();
+  return base.copyWith(
+    scaffoldBackgroundColor: brandBg,
+    textTheme: GoogleFonts.cairoTextTheme(base.textTheme),
+    primaryTextTheme: GoogleFonts.cairoTextTheme(base.primaryTextTheme),
+  );
+}
+
 class AlfahamApp extends StatelessWidget {
   const AlfahamApp({super.key});
 
@@ -50,7 +61,7 @@ class AlfahamApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: brandBg),
+      theme: _buildTheme(),
       home: const HomePage(),
     );
   }
@@ -106,37 +117,6 @@ class _HomePageState extends State<HomePage> {
     ctrl.play(channels[i].url);
   }
 
-  void openQuality() {
-    showModalBottomSheet(
-      context: context,
-      backgroundColor: cardBg,
-      builder: (_) => SafeArea(
-        child: ListView(shrinkWrap: true, children: [
-          const Padding(
-            padding: EdgeInsets.all(12),
-            child: Text('الجودة',
-                style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16)),
-          ),
-          _qualityTile('تلقائي', -1),
-          for (var i = 0; i < ctrl.qualities.length; i++)
-            _qualityTile(ctrl.qualities[i].label, i),
-        ]),
-      ),
-    );
-  }
-
-  Widget _qualityTile(String label, int index) {
-    final active = ctrl.quality == index;
-    return ListTile(
-      title: Text(label),
-      trailing: active ? const Icon(Icons.check, color: brandRed) : null,
-      onTap: () {
-        Navigator.pop(context);
-        ctrl.setQuality(index);
-      },
-    );
-  }
-
   /// قائمة القنوات: تمرير عمودي، والمشغل ثابت في الأعلى
   Widget channelList() {
     return ListView.separated(
@@ -146,21 +126,37 @@ class _HomePageState extends State<HomePage> {
       separatorBuilder: (_, __) => const SizedBox(height: 6),
       itemBuilder: (_, i) {
         final active = i == current;
-        return InkWell(
-          borderRadius: BorderRadius.circular(8),
-          onTap: () => select(i),
-          child: Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-            decoration: BoxDecoration(
-              color: active ? brandRed : cardBg,
-              border: Border.all(color: active ? brandRed : cardBorder),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(channels[i].name,
-                style: TextStyle(
+        return Material(
+          color: active ? brandRed : cardBg,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8),
+            side: BorderSide(color: active ? brandRed : cardBorder),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            hoverColor: const Color(0xFF2A2A2A),
+            onTap: () => select(i),
+            child: SizedBox(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                child: Text(
+                  channels[i].name,
+                  style: TextStyle(
                     fontSize: 13,
-                    fontWeight: active ? FontWeight.w900 : FontWeight.w700)),
+                    height: 1.4,
+                    color: active ? Colors.white : const Color(0xFFF1F1F1),
+                    fontWeight: active ? FontWeight.w900 : FontWeight.w700,
+                    shadows: const [
+                      Shadow(
+                          color: Color(0xE6000000),
+                          blurRadius: 3,
+                          offset: Offset(0, 1)),
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ),
         );
       },
@@ -178,7 +174,6 @@ class _HomePageState extends State<HomePage> {
           title: title,
           fullscreen: fullscreen,
           onFullscreen: toggleFullscreen,
-          onQuality: openQuality,
         );
 
     return PopScope(
@@ -207,16 +202,7 @@ class _HomePageState extends State<HomePage> {
                   // المشغل ثابت (لا يتحرك مع تمرير القنوات)
                   AnimatedBuilder(
                     animation: ctrl,
-                    builder: (_, __) => Column(mainAxisSize: MainAxisSize.min, children: [
-                      player(),
-                      if (ctrl.message.isNotEmpty &&
-                          ctrl.status != PlayStatus.error)
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4),
-                          child: Text(ctrl.message,
-                              style: const TextStyle(fontSize: 13)),
-                        ),
-                    ]),
+                    builder: (_, __) => player(),
                   ),
                   const SizedBox(height: 4),
                   // كروت القنوات: هي فقط التي تتمرر عمودياً
