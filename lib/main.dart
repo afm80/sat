@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -15,9 +14,17 @@ class Channel {
 }
 
 Future<List<Channel>> loadChannels() async {
-  final text = await rootBundle.loadString('assets/channels.json');
-  final list = jsonDecode(text) as List;
-  return list.map((e) => Channel(e['name'], e['url'])).toList();
+  final text = await rootBundle.loadString('assets/channels.txt');
+  final lines = text
+      .split('\n')
+      .map((l) => l.trim())
+      .where((l) => l.isNotEmpty)
+      .toList();
+  final out = <Channel>[];
+  for (var i = 0; i + 1 < lines.length; i += 2) {
+    out.add(Channel(lines[i], lines[i + 1]));
+  }
+  return out;
 }
 
 void main() => runApp(const AlfahamApp());
