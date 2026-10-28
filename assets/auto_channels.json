@@ -175,6 +175,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "Mixkurdy",
+  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Payam TV",
   "url": "https://hlspackager.akamaized.net/live/DB/PAYAM_TV/HLS/PAYAM_TV.m3u8",
   "group": "قنوات عراقية"
@@ -815,6 +820,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Medi1TV Arabic",
+  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Medi1TV Maghreb",
   "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
   "group": "قنوات عربية"
@@ -965,6 +975,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Pulse95 Radio",
+  "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Qatar Television 2",
   "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1002,6 +1017,11 @@
  {
   "name": "Rajeen TV",
   "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "RASD TV",
+  "url": "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1450,18 +1470,8 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "Eurosport 1 Spain",
-  "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "Eurosport 2 Hungary",
   "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Eurosport 2 Spain",
-  "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1662,11 +1672,6 @@
  {
   "name": "CNN",
   "url": "https://tvsen6.aynaott.com/cnn/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "CNN HD",
-  "url": "http://212.5.144.156:8080/cnn/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1910,16 +1915,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet Latin America",
-  "url": "http://190.128.214.97:64333/play/a01n/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Animal Planet Latin America HD",
-  "url": "http://15.204.246.24:8080/AnimalPlanetHD/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Autentic History",
   "url": "https://9e754fa707344ccca6d84955c8fcaf36.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RlaxxTV-eu_AutenticHistory/playlist.m3u8",
   "group": "قنوات عالمية"
@@ -1950,11 +1945,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "History (United States)",
-  "url": "http://212.5.144.156:8080/history/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "History Asia",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
   "group": "قنوات عالمية"
@@ -1962,11 +1952,6 @@
  {
   "name": "History Hit",
   "url": "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "History Latin America",
-  "url": "http://15.204.246.24:8080/HistoryHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1990,16 +1975,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery (United States)",
-  "url": "http://212.5.144.156:8080/id/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic (Croatia)",
-  "url": "http://176.61.157.250/NationalGeographic/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "National Geographic (Mexico)",
   "url": "http://138.121.15.230:9002/NAT-GEO/index.m3u8",
   "group": "قنوات عالمية"
@@ -2010,18 +1985,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "National Geographic (United States)",
-  "url": "http://212.5.144.156:8080/natgeo/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "National Geographic (United States) HD East",
   "url": "http://198.58.104.90:8989/natgeo/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic Latin America",
-  "url": "http://15.204.246.24:8080/NatGeoHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
