@@ -15,6 +15,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "Al Rasheed TV",
+  "url": "https://media1.livaat.com/static/AL-RASHEED-HD/playlist.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Al Sharqiya",
   "url": "http://185.9.2.18/chid_144/index.m3u8",
   "group": "قنوات عراقية"
@@ -167,11 +172,6 @@
  {
   "name": "Marjaeyat TV Persian",
   "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
-  "name": "Mixkurdy",
-  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -337,6 +337,11 @@
  {
   "name": "Al Maaref TV",
   "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Al Madina",
+  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -680,11 +685,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Holy Quran Radio",
-  "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Holy Quran Radio Nablus",
   "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
   "group": "قنوات عربية"
@@ -815,11 +815,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Medi1TV Arabic",
-  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Medi1TV Maghreb",
   "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
   "group": "قنوات عربية"
@@ -827,6 +822,11 @@
  {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -905,6 +905,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Nidae AlIslam Radio",
+  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Nour Al Koddass",
   "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
@@ -945,11 +950,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Palestine Al Yawm",
-  "url": "https://live.paltodaytv.com/paltv/live/playlist_sfm4s.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Palestinetv",
   "url": "https://ncdn.telewebion.ir/palestine/live/playlist.m3u8",
   "group": "قنوات عربية"
@@ -962,11 +962,6 @@
  {
   "name": "Prime (Syria)",
   "url": "https://cdn.bestream.io/prime/prime.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Pulse95 Radio",
-  "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1007,11 +1002,6 @@
  {
   "name": "Rajeen TV",
   "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "RASD TV",
-  "url": "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1057,6 +1047,11 @@
  {
   "name": "Safeer TV",
   "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sahara 24",
+  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1190,11 +1185,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "UNews",
-  "url": "https://cdn.catiacast.video/abr/9436b5ab3c1171ab04a59af11951292f/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Vilayet TV",
   "url": "https://nl.livekadeh.com/hls2/vilayet.m3u8",
   "group": "قنوات عربية"
@@ -1257,11 +1247,6 @@
  {
   "name": "KTV Sport Plus",
   "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Oman Sports TV",
-  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1890,6 +1875,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Sky News Urdu",
+  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1912,11 +1902,6 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
