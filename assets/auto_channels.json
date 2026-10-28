@@ -15,11 +15,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "Al Rasheed TV",
-  "url": "https://media1.livaat.com/static/AL-RASHEED-HD/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Al Sharqiya",
   "url": "http://185.9.2.18/chid_144/index.m3u8",
   "group": "قنوات عراقية"
@@ -342,11 +337,6 @@
  {
   "name": "Al Maaref TV",
   "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Al Madina",
-  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -840,11 +830,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -917,11 +902,6 @@
  {
   "name": "News of the World Arabic",
   "url": "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Nidae AlIslam Radio",
-  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1077,11 +1057,6 @@
  {
   "name": "Safeer TV",
   "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sahara 24",
-  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1325,6 +1300,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "beIN SPORTS XTRA en Espanol",
+  "url": "https://dc1644a9jazgj.cloudfront.net/beIN_Sports_Xtra_Espanol.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "BEK Sports West",
   "url": "https://cdn3.wowza.com/5/ZWQ1K2NYTmpFbGsr/BEK-WOWZA-1/smil:BEKPRIMEW.smil/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1352,6 +1332,21 @@
  {
   "name": "CT Sport",
   "url": "http://88.212.15.50/live/test_ctsport_25p/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "DAZN 3 Portugal",
+  "url": "http://23.237.104.106:8080/DAZN_3/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "DAZN 4",
+  "url": "http://23.237.104.106:8080/DAZN_4/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "DAZN 5",
+  "url": "http://23.237.104.106:8080/DAZN_5/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1470,6 +1465,26 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 1 Spain",
+  "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport 2 Hungary",
+  "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport 2 Spain",
+  "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport",
+  "url": "https://drk6xq0vhn.gpcdn.net/live/euro_sports_hd_abr/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ABC News",
   "url": "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
   "group": "قنوات عالمية"
@@ -1537,6 +1552,11 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1667,11 +1687,6 @@
  {
   "name": "CNN Brasil",
   "url": "https://d25usgadhphvwi.cloudfront.net/hls/main.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "CNN Chile",
-  "url": "http://190.110.96.238:8000/play/a0f5/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1872,11 +1887,6 @@
  {
   "name": "Sky News Extra 3",
   "url": "https://skynewsau-live.akamaized.net/hls/live/2002691/skynewsau-extra3/master.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Sky News Urdu",
-  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
   "group": "قنوات عالمية"
  },
  {
