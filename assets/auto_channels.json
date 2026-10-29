@@ -250,11 +250,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "AL24 News",
-  "url": "https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Al Alam Al Yawm",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/chunklist_b928000.m3u8",
   "group": "قنوات عربية"
@@ -580,11 +575,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "CNA (Algeria)",
-  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -687,11 +677,6 @@
  {
   "name": "Holy Quran Radio Nablus",
   "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Hya TV",
-  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=187",
   "group": "قنوات عربية"
  },
  {
@@ -837,11 +822,6 @@
  {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1245,6 +1225,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Yemen Today TV",
+  "url": "https://video.yementdy.tv/hls/yementoday.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Zarin TV",
   "url": "https://fl1002.bozztv.com/gf-zarintv/index.m3u8",
   "group": "قنوات عربية"
@@ -1370,6 +1355,16 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "DAZN Darts x Pluto TV",
+  "url": "https://jmp2.uk/plu-64b67f0424ade50008a3be17.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "DAZN Heldinnen x Pluto TV",
+  "url": "https://jmp2.uk/plu-64afe50c5dc16600087f3227.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "DD Sports",
   "url": "https://d3qs3d2rkhfqrt.cloudfront.net/out/v1/b17adfe543354fdd8d189b110617cddd/index.m3u8",
   "group": "قنوات رياضية"
@@ -1445,6 +1440,16 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN (Brazil)",
+  "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN (United States)",
+  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN (United States) HD",
   "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
   "group": "قنوات رياضية"
@@ -1457,6 +1462,11 @@
  {
   "name": "ESPN Latin America Colombia",
   "url": "http://190.61.47.54:8000/play/a004/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN Latin America Mexico",
+  "url": "http://168.228.44.241:9997/play/a06p/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1565,18 +1575,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Al Jazeera English HD",
-  "url": "http://stream.mcquack.net/131/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Arirang TV",
   "url": "http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Arirang TV HD",
-  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=111",
   "group": "قنوات عالمية"
  },
  {
@@ -1592,6 +1592,11 @@
  {
   "name": "BBC News South Asia",
   "url": "https://mumbai-edge.smartplaytv.in/BBCNews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "CBS News 24/7",
+  "url": "https://jmp2.uk/plu-6350fdd266e9ea0007bedec5.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1680,6 +1685,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "CNN HD",
+  "url": "http://212.5.144.156:8080/cnn/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "CNN Brasil",
   "url": "https://d25usgadhphvwi.cloudfront.net/hls/main.m3u8",
   "group": "قنوات عالمية"
@@ -1692,6 +1702,11 @@
  {
   "name": "CNN International",
   "url": "https://d3bp6dwmpbdajl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ury0meh5m4nzm/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "CNN International Latin America",
+  "url": "http://168.228.44.241:9997/play/a073/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1885,11 +1900,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Sky News Urdu",
-  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1965,8 +1975,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "History Asia",
-  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
+  "name": "History (United States)",
+  "url": "http://212.5.144.156:8080/history/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2000,6 +2010,16 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Investigation Discovery (United States)",
+  "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "National Geographic (Croatia)",
+  "url": "http://176.61.157.250/NationalGeographic/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "National Geographic (Mexico)",
   "url": "http://138.121.15.230:9002/NAT-GEO/index.m3u8",
   "group": "قنوات عالمية"
@@ -2007,6 +2027,11 @@
  {
   "name": "National Geographic (Poland)",
   "url": "http://92.114.85.87:8006/play/a00a/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "National Geographic (United States)",
+  "url": "http://212.5.144.156:8080/natgeo/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
