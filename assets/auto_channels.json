@@ -250,6 +250,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "AL24 News",
+  "url": "https://cdn.live.easybroadcast.io/abr_corp/66_al24_u4yga6h/corp/66_al24_u4yga6h_240p/chunks.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al Alam Al Yawm",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/chunklist_b928000.m3u8",
   "group": "قنوات عربية"
@@ -680,6 +685,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Hya TV",
+  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=187",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "i24NEWS Arabic",
   "url": "https://i24newsarabic-cdn.encoders.immergo.tv/master.m3u8",
   "group": "قنوات عربية"
@@ -920,11 +930,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Oman TV Cultural",
-  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Oman TV Mubashir",
   "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -1007,11 +1012,6 @@
  {
   "name": "Rajeen TV",
   "url": "https://mn-nl.mncdn.com/palabroad/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "RASD TV",
-  "url": "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1102,11 +1102,6 @@
  {
   "name": "Sharjah Radio",
   "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sharjah Radio Quran",
-  "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1575,8 +1570,18 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Arirang TV",
   "url": "http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Arirang TV HD",
+  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=111",
   "group": "قنوات عالمية"
  },
  {
@@ -1925,11 +1930,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Animal Planet (United States)",
   "url": "http://23.239.31.26:8989/animalplanet/index.m3u8",
   "group": "قنوات عالمية"
@@ -1977,6 +1977,11 @@
  {
   "name": "History (United States)",
   "url": "http://212.5.144.156:8080/history/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "History Asia",
+  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
   "group": "قنوات عالمية"
  },
  {
