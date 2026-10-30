@@ -680,11 +680,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Holy Quran Radio Nablus",
-  "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Hya TV",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=187",
   "group": "قنوات عربية"
@@ -930,6 +925,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Oman TV Mubashir",
   "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -1015,6 +1015,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "RASD TV",
+  "url": "https://cloud.streamingconnect.tv/hls/rasdtv2/rasdtv.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Rashid AlMajed",
   "url": "https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8",
   "group": "قنوات عربية"
@@ -1060,11 +1065,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Sahara 24",
-  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Sat 7 Arabic",
   "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
   "group": "قنوات عربية"
@@ -1102,6 +1102,11 @@
  {
   "name": "Sharjah Radio",
   "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sharjah Radio Quran",
+  "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1252,11 +1257,6 @@
  {
   "name": "KTV Sport Plus",
   "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Oman Sports TV",
-  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1462,11 +1462,6 @@
  {
   "name": "ESPN Latin America Mexico",
   "url": "http://168.228.44.241:9997/play/a06p/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN Premium (Argentina) HD",
-  "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1905,6 +1900,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Sky News Urdu",
+  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1927,6 +1927,11 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2017,11 +2022,6 @@
  {
   "name": "Investigation Discovery (United States)",
   "url": "http://212.5.144.156:8080/id/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic (Croatia)",
-  "url": "http://176.61.157.250/NationalGeographic/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
