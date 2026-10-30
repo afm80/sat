@@ -745,11 +745,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Lana TV",
-  "url": "https://cdn.streamlane.tv/hls/ltv/master.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "LBC",
   "url": "http://185.9.2.18/chid_327/index.m3u8",
   "group": "قنوات عربية"
@@ -1260,6 +1255,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Oman Sports TV",
+  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "30A Golf Kingdom",
   "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
   "group": "قنوات رياضية"
@@ -1440,11 +1440,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN (United States)",
-  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN (United States) HD",
   "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
   "group": "قنوات رياضية"
@@ -1462,6 +1457,11 @@
  {
   "name": "ESPN Latin America Mexico",
   "url": "http://168.228.44.241:9997/play/a06p/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN Premium (Argentina) HD",
+  "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
