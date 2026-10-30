@@ -745,6 +745,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Lana TV",
+  "url": "https://cdn.streamlane.tv/hls/ltv/master.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "LBC",
   "url": "http://185.9.2.18/chid_327/index.m3u8",
   "group": "قنوات عربية"
@@ -1060,6 +1065,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Sahara 24",
+  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Sat 7 Arabic",
   "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
   "group": "قنوات عربية"
@@ -1197,11 +1207,6 @@
  {
   "name": "Watan TV",
   "url": "https://rp.tactivemedia.com/watantv_source/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Watar Radio",
-  "url": "https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1437,6 +1442,11 @@
  {
   "name": "ESPN (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN (United States)",
+  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1900,11 +1910,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Sky News Urdu",
-  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1927,11 +1932,6 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2012,11 +2012,6 @@
  {
   "name": "Investigation Discovery (India)",
   "url": "https://drk6xq0vhn.gpcdn.net/live/id_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Investigation Discovery (Russia)",
-  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
