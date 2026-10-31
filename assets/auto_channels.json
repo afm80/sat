@@ -80,16 +80,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "EmanTv",
-  "url": "https://avr.host247.net/live/emantv/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
-  "name": "FarmodaTV",
-  "url": "https://avr.host247.net/live/FarmodaTV/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "I News",
   "url": "https://live.i-news.tv/hls/stream.m3u8",
   "group": "قنوات عراقية"
@@ -277,6 +267,11 @@
  {
   "name": "Al Araby TV 2",
   "url": "https://live.kwikmotion.com/alaraby2live/alaraby2.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Al Araby TV",
+  "url": "https://live.kwikmotion.com/alaraby1live/alaraby_abr/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -567,6 +562,11 @@
  {
   "name": "Charity TV",
   "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "CNA (Algeria)",
+  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -915,8 +915,8 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Oman TV Mubashir",
-  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1047,6 +1047,11 @@
  {
   "name": "Safeer TV",
   "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sahara 24",
+  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1240,11 +1245,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "KTV Sport Plus",
-  "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "Oman Sports TV",
   "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
@@ -1415,16 +1415,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN 6 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 7 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
   "group": "قنوات رياضية"
@@ -1467,6 +1457,11 @@
  {
   "name": "Eurosport 2 Hungary",
   "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport 2 Spain",
+  "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1547,6 +1542,11 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
