@@ -580,6 +580,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "CNA (Algeria)",
+  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -742,11 +747,6 @@
  {
   "name": "Koogi TV",
   "url": "https://5d658d7e9f562.streamlock.net/koogi.tv/koogi.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Lana TV",
-  "url": "https://cdn.streamlane.tv/hls/ltv/master.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1210,6 +1210,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Watar Radio",
+  "url": "https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Watar TV",
   "url": "http://htvint.mada.ps:8889/orient/index.m3u8",
   "group": "قنوات عربية"
@@ -1470,7 +1475,7 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN Premium (Argentina) HD",
+  "name": "ESPN Premium HD",
   "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
   "group": "قنوات رياضية"
  },
@@ -1692,11 +1697,6 @@
  {
   "name": "CNN",
   "url": "https://tvsen6.aynaott.com/cnn/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "CNN HD",
-  "url": "http://212.5.144.156:8080/cnn/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1935,6 +1935,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Animal Planet (United States)",
   "url": "http://23.239.31.26:8989/animalplanet/index.m3u8",
   "group": "قنوات عالمية"
@@ -1980,11 +1985,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "History (United States)",
-  "url": "http://212.5.144.156:8080/history/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "History Asia",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
   "group": "قنوات عالمية"
@@ -2015,8 +2015,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery (United States)",
-  "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "name": "Investigation Discovery (Russia)",
+  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2027,11 +2027,6 @@
  {
   "name": "National Geographic (Poland)",
   "url": "http://92.114.85.87:8006/play/a00a/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic (United States)",
-  "url": "http://212.5.144.156:8080/natgeo/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
