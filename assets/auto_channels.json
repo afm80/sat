@@ -80,6 +80,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "FarmodaTV",
+  "url": "https://avr.host247.net/live/FarmodaTV/playlist.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "I News",
   "url": "https://live.i-news.tv/hls/stream.m3u8",
   "group": "قنوات عراقية"
@@ -565,11 +570,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "CNA (Algeria)",
-  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -582,11 +582,6 @@
  {
   "name": "Dabanga TV",
   "url": "https://hls.dabangasudan.org/hls/stream.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Dubai TV International",
-  "url": "http://185.9.2.18/chid_139/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -920,6 +915,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Oman TV Mubashir",
+  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "One TV",
   "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1225,11 +1225,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Al Iraqia Sport",
-  "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "Bahrain Sports 1",
   "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1245,8 +1240,8 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "Oman Sports TV",
-  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
+  "name": "KTV Sport Plus",
+  "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1385,33 +1380,13 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN 2 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN 2 Latin America Colombia",
   "url": "http://190.61.47.54:8000/play/a005/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN 3 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN 4 (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07n/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 4 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 5 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1542,11 +1517,6 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Al Jazeera English HD",
-  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1880,11 +1850,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Sky News Urdu",
-  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1907,11 +1872,6 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
