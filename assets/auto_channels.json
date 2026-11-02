@@ -565,6 +565,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "CNA (Algeria)",
+  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -632,11 +637,6 @@
  {
   "name": "France 24 Arabic",
   "url": "https://live.france24.com/hls/live/2037222-b/F24_AR_HI_HLS/master_5000.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Future TV",
-  "url": "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -955,16 +955,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Pulse95 Radio",
-  "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Qatar Television 2",
-  "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Qatar Television",
   "url": "https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1007,11 +997,6 @@
  {
   "name": "Rashid AlMajed",
   "url": "https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Red TV Lebanon",
-  "url": "https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1087,16 +1072,6 @@
  {
   "name": "Shabab FM",
   "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sharjah Radio",
-  "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sharjah Radio Quran",
-  "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1195,11 +1170,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Watar Radio",
-  "url": "https://svs.itworkscdn.net/smcwatarlive/smcwatar/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Watar TV",
   "url": "http://htvint.mada.ps:8889/orient/index.m3u8",
   "group": "قنوات عربية"
@@ -1247,6 +1217,11 @@
  {
   "name": "KTV Sport Plus",
   "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Oman Sports TV",
+  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1385,8 +1360,18 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN 2 Latin America",
+  "url": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN 2 Latin America Colombia",
   "url": "http://190.61.47.54:8000/play/a005/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN 3 Latin America",
+  "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1402,6 +1387,11 @@
  {
   "name": "ESPN 5 Latin America",
   "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN 6 Latin America",
+  "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1425,6 +1415,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN Latin America",
+  "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN Latin America Colombia",
   "url": "http://190.61.47.54:8000/play/a004/index.m3u8",
   "group": "قنوات رياضية"
@@ -1437,6 +1432,11 @@
  {
   "name": "ESPN Premium HD",
   "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport 1 Germany",
+  "url": "http://90.183.52.46:4000/play/a06v/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1462,11 +1462,6 @@
  {
   "name": "Eurosport",
   "url": "https://drk6xq0vhn.gpcdn.net/live/euro_sports_hd_abr/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "F1 Channel",
-  "url": "https://amg12058-c15studio-amg12058c1-lg-us-5787.playouts.now.amagi.tv/playlist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -2037,6 +2032,11 @@
  {
   "name": "Pluto TV History",
   "url": "https://jmp2.uk/plu-5a4d35dfa5c02e717a234f86.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Polsat Viasat History",
+  "url": "http://185.227.34.179:8080/polsat-viasat-history-hd/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
