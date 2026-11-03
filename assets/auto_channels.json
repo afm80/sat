@@ -325,11 +325,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Al Maaref TV",
-  "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Al Madina",
   "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
@@ -560,11 +555,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Charity TV",
-  "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -642,6 +632,11 @@
  {
   "name": "God Stands Kids Club TV Arabic",
   "url": "https://online.godstands.tv:5443/WebRTCApp/streams/KidsArabic.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "God Stands TV Arabic",
+  "url": "https://online.godstands.tv:5443/WebRTCApp/streams/Arabic.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -820,6 +815,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -892,6 +892,11 @@
  {
   "name": "News of the World Arabic",
   "url": "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Nidae AlIslam Radio",
+  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1600,6 +1605,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "BBC News South Asia",
+  "url": "https://mumbai-edge.smartplaytv.in/BBCNews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "CBS News 24/7",
   "url": "https://jmp2.uk/plu-6350fdd266e9ea0007bedec5.m3u8",
   "group": "قنوات عالمية"
@@ -1815,6 +1825,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Fox News Channel",
+  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -1900,6 +1915,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Sky News Urdu",
+  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1922,11 +1942,6 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
