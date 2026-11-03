@@ -52,6 +52,29 @@ jobs:
       - name: Build one universal APK (all devices)
         run: flutter build apk --release
 
+      - name: Sign APK with my key
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_BASE64" ]; then
+            echo "::error::Signing secrets are missing in this repository (add the 4 ANDROID_* secrets)."
+            exit 1
+          fi
+          echo "$KEYSTORE_BASE64" | base64 -d > "$RUNNER_TEMP/my.jks"
+          BT=$ANDROID_HOME/build-tools/$(ls $ANDROID_HOME/build-tools | sort -V | tail -1)
+          $BT/apksigner sign \
+            --ks "$RUNNER_TEMP/my.jks" \
+            --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass env:KEYSTORE_PASSWORD \
+            --key-pass env:KEY_PASSWORD \
+            build/app/outputs/flutter-apk/app-release.apk
+          $BT/apksigner verify --print-certs build/app/outputs/flutter-apk/app-release.apk
+          rm -f "$RUNNER_TEMP/my.jks"
+          echo "تم تفعيل التوقيع بمفتاحك."
+
       - name: Rename APK
         run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/alfaham-sat.apk
 
