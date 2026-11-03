@@ -690,6 +690,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Jeddah Radio",
+  "url": "https://live.kwikmotion.com/sbrksajeddahradiolive/srpksajeddahradio/chunks.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Jordan Archive",
   "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Archive/playlist.m3u8",
   "group": "قنوات عربية"
@@ -815,11 +820,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -907,6 +907,11 @@
  {
   "name": "Noursat",
   "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1450,6 +1455,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 1 Czechia",
+  "url": "http://88.212.7.14/live/test_esp1_hevc_tizen/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Eurosport 1 Germany",
   "url": "http://90.183.52.46:4000/play/a06v/index.m3u8",
   "group": "قنوات رياضية"
@@ -1460,13 +1470,28 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 1 Russia",
+  "url": "https://s7.iptv-24.net/1439/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Eurosport 1 Spain",
   "url": "http://45.134.141.161:2200/ARG/Eurosport_1_HD/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 2 Czechia",
+  "url": "http://88.212.7.14/live/test_esp2_hevc_tizen/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Eurosport 2 Hungary",
   "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Eurosport 2 Russia",
+  "url": "https://s7.iptv-24.net/1452/playlist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1572,11 +1597,6 @@
  {
   "name": "BBC News North America",
   "url": "http://23.237.104.106:8080/USA_BBC_NEWS/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "BBC News South Asia",
-  "url": "https://mumbai-edge.smartplaytv.in/BBCNews/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1795,11 +1815,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Fox News Channel",
-  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -1910,6 +1925,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Animal Planet (United States)",
   "url": "http://23.239.31.26:8989/animalplanet/index.m3u8",
   "group": "قنوات عالمية"
@@ -1992,6 +2012,11 @@
  {
   "name": "Investigation Discovery (India)",
   "url": "https://drk6xq0vhn.gpcdn.net/live/id_hd_abr/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Investigation Discovery (Russia)",
+  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
