@@ -45,6 +45,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "Alghadeer TV",
+  "url": "https://sd343444.vodu.store:3356/live/Alghadeer/index.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Amozhgary TV",
   "url": "https://app-live.org/live/3268334b/index.m3u8",
   "group": "قنوات عراقية"
@@ -325,6 +330,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al Maaref TV",
+  "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al Madina",
   "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
@@ -382,11 +392,6 @@
  {
   "name": "Al-Fady TV",
   "url": "https://5d658d7e9f562.streamlock.net/alfadytv.tv/alfadytv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Al-Sahat TV",
-  "url": "https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -817,11 +822,6 @@
  {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1275,11 +1275,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "AyM Sports",
-  "url": "http://168.196.127.137:6001/play/a06v/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "beIN SPORTS XTRA",
   "url": "https://bein-xtra-bein.amagi.tv/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1430,6 +1425,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN (United States)",
+  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN (United States) HD",
   "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
   "group": "قنوات رياضية"
@@ -1447,6 +1447,11 @@
  {
   "name": "ESPN Latin America Mexico",
   "url": "http://168.228.44.241:9997/play/a06p/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN Premium HD",
+  "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1567,6 +1572,11 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1695,13 +1705,13 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "CNN International",
-  "url": "https://d3bp6dwmpbdajl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ury0meh5m4nzm/index.m3u8",
+  "name": "CNN en Espanol",
+  "url": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
   "group": "قنوات عالمية"
  },
  {
-  "name": "CNN International Latin America",
-  "url": "http://168.228.44.241:9997/play/a073/index.m3u8",
+  "name": "CNN International",
+  "url": "https://d3bp6dwmpbdajl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ury0meh5m4nzm/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1895,11 +1905,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Sky News Urdu",
-  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1922,6 +1927,11 @@
  {
   "name": "Animal Planet (India) HD",
   "url": "https://drk6xq0vhn.gpcdn.net/live/animal_planet_hd_abr/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
