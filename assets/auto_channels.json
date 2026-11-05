@@ -505,6 +505,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Asharq Radio",
+  "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Asil TV",
   "url": "https://live.asil.tv/asiltv/index.m3u8",
   "group": "قنوات عربية"
@@ -562,11 +567,6 @@
  {
   "name": "Charity TV",
   "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "CNA (Algeria)",
-  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -672,11 +672,6 @@
  {
   "name": "Holy Quran Radio",
   "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Holy Quran Radio Nablus",
-  "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -830,6 +825,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -895,11 +895,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Muslim Network TV",
-  "url": "https://afghantv.app/hls2/muslimnetwork/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "News of the World Arabic",
   "url": "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
   "group": "قنوات عربية"
@@ -912,6 +907,11 @@
  {
   "name": "Nour Al Sharq",
   "url": "https://svs.itworkscdn.net/nour8satlive/livestream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Noursat",
+  "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1015,6 +1015,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Red TV Lebanon",
+  "url": "https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Rojava TV",
   "url": "https://hlspackager.akamaized.net/live/DB/ROJAVA_HD/HLS/ROJAVA_HD.m3u8",
   "group": "قنوات عربية"
@@ -1082,11 +1087,6 @@
  {
   "name": "Senses TV",
   "url": "http://31.14.41.69:8080/hls/sensesonline/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Shabab FM",
-  "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1815,11 +1815,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Fox News Channel",
-  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -1902,6 +1897,11 @@
  {
   "name": "Sky News Extra 3",
   "url": "https://skynewsau-live.akamaized.net/hls/live/2002691/skynewsau-extra3/master.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Sky News Urdu",
+  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2012,11 +2012,6 @@
  {
   "name": "Investigation Discovery (India)",
   "url": "https://drk6xq0vhn.gpcdn.net/live/id_hd_abr/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Investigation Discovery (Russia)",
-  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
