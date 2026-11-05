@@ -395,6 +395,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al-Sahat TV",
+  "url": "https://assahat.b-cdn.net/Assahat/assahatobs/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al-Souriya TV",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-al-souriya-tv/e3150760fa5fd62776225433b8c3d406/index.m3u8",
   "group": "قنوات عربية"
@@ -500,11 +505,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Asharq Radio",
-  "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Asil TV",
   "url": "https://live.asil.tv/asiltv/index.m3u8",
   "group": "قنوات عربية"
@@ -562,6 +562,11 @@
  {
   "name": "Charity TV",
   "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "CNA (Algeria)",
+  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -910,11 +915,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Noursat",
-  "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Oman TV Cultural",
   "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -1012,11 +1012,6 @@
  {
   "name": "Rashid AlMajed",
   "url": "https://dphwv2ufgnfsq.cloudfront.net/out/v1/59cd80dfe93a479eb8b4d79bc6f225ca/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Red TV Lebanon",
-  "url": "https://live.kwikmotion.com/redtvlive/redtv.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1250,6 +1245,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Oman Sports TV",
+  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "30A Golf Kingdom",
   "url": "https://30a-tv.com/feeds/vidaa/golf.m3u8",
   "group": "قنوات رياضية"
@@ -1272,6 +1272,11 @@
  {
   "name": "Astrahan.Ru Sport",
   "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "beIN Sports USA",
+  "url": "https://tvsen6.aynaott.com/beinsports/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1317,16 +1322,6 @@
  {
   "name": "DAZN 3 Portugal",
   "url": "http://23.237.104.106:8080/DAZN_3/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "DAZN 4",
-  "url": "http://23.237.104.106:8080/DAZN_4/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "DAZN 5",
-  "url": "http://23.237.104.106:8080/DAZN_5/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1712,6 +1707,11 @@
  {
   "name": "CNN International",
   "url": "https://d3bp6dwmpbdajl.cloudfront.net/v1/master/3722c60a815c199d9c0ef36c5b73da68a62b09d1/cc-ury0meh5m4nzm/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "CNN International Latin America",
+  "url": "http://168.228.44.241:9997/play/a073/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
