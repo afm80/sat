@@ -61,7 +61,7 @@
  },
  {
   "name": "AVA Media",
-  "url": "https://ava002.xyz/upload/images/1080.m3u8",
+  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -351,7 +351,7 @@
  },
  {
   "name": "Al Mashhad",
-  "url": "https://amg30483-amg30483c23-amgplt0794.playout.now3.amagi.tv/ts-ap-s1-n1/playlist/amg30483-amg30483c23-amgplt0794/playlist.m3u8?ads.appversion=[APP_VERSION]&ads.devicemodel=[DEVICE_MODEL]&ads.lat=[LMT]&ads.bundleid=[APP_BUNDLE]&ads.donotsell=[DNS]&ads.ifa=[IFA]&ads.targetad=[TARGETAD_ALLOWED]&ads.appstoreurl=[APP_STOREURL]&ads.deviceid=[DEVICE_ID]&ads.devicemake=[DEVICE_MAKE]&ads.devicetype=[DEVICE_TYPE]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.ifatype=[IFA_TYPE]&ads.ip=[IP]&ads.appname=[APP_NAME]&ads.country=[COUNTRY]&ads.fck=[FCK]&ads.givn=[NONCE]&ads.ua=[UA]&ads.usprivacy=[US_PRIVACY]&ads.viewsize=[VIEWSIZE]&ads.coppa=0&ads.ic=[IC]&ads.network_name=[networkname]",
+  "url": "https://amg30483-amg30483c23-amgplt0794.playout.now3.amagi.tv/ts-ap-s1-n1/playlist/amg30483-amg30483c23-amgplt0794/playlist.m3u8?ads.appname=[APP_NAME]&ads.appstoreurl=[APP_STOREURL]&ads.appversion=[APP_VERSION]&ads.bundleid=[APP_BUNDLE]&ads.coppa=0&ads.country=[COUNTRY]&ads.deviceid=[DEVICE_ID]&ads.devicemake=[DEVICE_MAKE]&ads.devicemodel=[DEVICE_MODEL]&ads.devicetype=[DEVICE_TYPE]&ads.donotsell=[DNS]&ads.fck=[FCK]&ads.gdpr=[GDPR]&ads.gdprconsent=[GDPR_CONSENT]&ads.givn=[NONCE]&ads.ic=[IC]&ads.ifa=[IFA]&ads.ifatype=[IFA_TYPE]&ads.ip=[IP]&ads.lat=[LMT]&ads.network_name=[networkname]&ads.targetad=[TARGETAD_ALLOWED]&ads.ua=[UA]&ads.usprivacy=[US_PRIVACY]&ads.viewsize=[VIEWSIZE]",
   "group": "قنوات عربية"
  },
  {
@@ -595,11 +595,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "El Radio 9090 FM",
-  "url": "https://9090video.mobtada.com/hls/stream.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "El Watania 1",
   "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -691,7 +686,7 @@
  },
  {
   "name": "i24NEWS Arabic",
-  "url": "https://i24newsarabic-cdn.encoders.immergo.tv/master.m3u8",
+  "url": "https://hlspackager.akamaized.net/live/DB/i24_ARABIC/HLS/i24_ARABIC.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -925,6 +920,16 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Mubashir",
+  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "One TV",
   "url": "https://hms.pfs.gdn/v1/broadcast/one/playlist.m3u8",
   "group": "قنوات عربية"
@@ -967,11 +972,6 @@
  {
   "name": "Qatar Television 2",
   "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Qatar Television",
-  "url": "https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1040,11 +1040,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Roya TV (Jordan)",
-  "url": "https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "RT Arabic",
   "url": "https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1062,11 +1057,6 @@
  {
   "name": "Sat 7 Arabic",
   "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sat 7 Kids",
-  "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1167,6 +1157,11 @@
  {
   "name": "Tele Tchad",
   "url": "https://strhlslb01.streamakaci.tv/str_tchad_tchad/str_tchad_multi/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Thaqalayn TV",
+  "url": "http://62.60.207.173:8080/hls/thaqalayn/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1316,7 +1311,7 @@
  },
  {
   "name": "Claro Sports",
-  "url": "http://168.196.127.137:6001/play/a08r/index.m3u8",
+  "url": "http://45.171.64.30:6060/play/a00w/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1570,6 +1565,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Arirang TV",
   "url": "http://amdlive-ch01.ctnd.com.edgesuite.net/arirang_1ch/smil:arirang_1ch.smil/playlist.m3u8",
   "group": "قنوات عالمية"
@@ -1696,7 +1696,7 @@
  },
  {
   "name": "CNN en Espanol",
-  "url": "https://streaming.onnethn.com/CNN_ESPANOL/playlist.m3u8",
+  "url": "https://amg00803-cnnfast-amg00803c3-lg-es-5477.playouts.now.amagi.tv/playlist.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1816,12 +1816,12 @@
  },
  {
   "name": "France 24",
-  "url": "https://live.france24.com/hls/live/2037179-b/F24_FR_HI_HLS/master_5000.m3u8",
+  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=10007",
   "group": "قنوات عالمية"
  },
  {
   "name": "France 24 English",
-  "url": "https://live.france24.com/hls/live/2037218-b/F24_EN_HI_HLS/master_5000.m3u8",
+  "url": "https://freem3u.xyz/api/live/play.m3u8?vid=96",
   "group": "قنوات عالمية"
  },
  {
@@ -1831,7 +1831,7 @@
  },
  {
   "name": "i24NEWS English World",
-  "url": "https://i24newsenglish-cdn.encoders.immergo.tv/master.m3u8",
+  "url": "https://hlspackager.akamaized.net/live/DB/i24_ENGLISH/HLS/i24_ENGLISH.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1851,7 +1851,7 @@
  },
  {
   "name": "NHK World-Japan",
-  "url": "https://masterpl.hls.nhkworld.jp/hls/w/live/smarttv.m3u8",
+  "url": "https://cdn.pishow.tv/ott/live/455/master.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1876,7 +1876,7 @@
  },
  {
   "name": "RT India",
-  "url": "https://rt-india.rttv.com/dvr/rtindia/playlist.m3u8",
+  "url": "https://mumbai-edge.smartplaytv.in/RTIndia/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1922,6 +1922,11 @@
  {
   "name": "Animal Planet (Russia)",
   "url": "http://stream.mcquack.net/114/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Animal Planet (United States)",
+  "url": "http://23.237.104.106:8080/USA_ANIMAL_PLANET/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2056,7 +2061,7 @@
  },
  {
   "name": "viju History",
-  "url": "http://178.124.179.122:8080/HistoryHD/index.m3u8",
+  "url": "http://46.53.200.153:7777/play/a01j/index.m3u8",
   "group": "قنوات عالمية"
  }
 ]
