@@ -60,11 +60,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "AVA Media",
-  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -595,6 +590,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "El Radio 9090 FM",
+  "url": "https://9090video.mobtada.com/hls/stream.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "El Watania 1",
   "url": "https://sw1.tanitweb.net/TunisiaTV/_definst_/watania1/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -920,11 +920,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Oman TV Cultural",
-  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Oman TV Mubashir",
   "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -972,6 +967,11 @@
  {
   "name": "Qatar Television 2",
   "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Qatar Television",
+  "url": "https://live.kwikmotion.com/qtv1live/qtv1.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1040,6 +1040,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Roya TV (Jordan)",
+  "url": "https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "RT Arabic",
   "url": "https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1057,6 +1062,11 @@
  {
   "name": "Sat 7 Arabic",
   "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sat 7 Kids",
+  "url": "https://svs.itworkscdn.net/sat7kidslive/sat7kids.smil/playlist_dvr.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1417,6 +1427,11 @@
  {
   "name": "ESPN (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN (United States)",
+  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1807,6 +1822,11 @@
  {
   "name": "Euronews Spanish",
   "url": "https://iptv.bitred.cl/euronews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Fox News Channel",
+  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
