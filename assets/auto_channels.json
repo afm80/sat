@@ -640,6 +640,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Future TV",
+  "url": "https://live.kwikmotion.com/futurelive/ftv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "God Stands Kids Club TV Arabic",
   "url": "https://online.godstands.tv:5443/WebRTCApp/streams/KidsArabic.m3u8",
   "group": "قنوات عربية"
@@ -667,6 +672,11 @@
  {
   "name": "Holy Quran Radio",
   "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Holy Quran Radio Nablus",
+  "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -910,6 +920,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Oman TV Mubashir",
   "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
@@ -1085,18 +1100,8 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Sharjah Radio",
-  "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Sharjah Radio Quran",
   "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Sharjah TV",
-  "url": "https://live.kwikmotion.com/smc1live/smc1tv.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1237,6 +1242,11 @@
  {
   "name": "KTV Sport",
   "url": "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "KTV Sport Plus",
+  "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1415,6 +1425,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN (United States)",
+  "url": "http://tvsen7.aynascope.net/espn/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN (United States) HD",
   "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
   "group": "قنوات رياضية"
@@ -1455,6 +1470,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 1 Portugal",
+  "url": "http://185.228.163.146:8000/play/a03z/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Eurosport 1 Russia",
   "url": "https://s7.iptv-24.net/1439/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1475,6 +1495,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "Eurosport 2 Portugal",
+  "url": "http://185.228.163.146:8000/play/a048/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Eurosport 2 Russia",
   "url": "https://s7.iptv-24.net/1452/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1482,11 +1507,6 @@
  {
   "name": "Eurosport 2 Spain",
   "url": "http://45.134.141.161:2200/ARG/Eurosport_2_HD/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Eurosport",
-  "url": "https://drk6xq0vhn.gpcdn.net/live/euro_sports_hd_abr/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1560,8 +1580,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Al Jazeera English HD",
-  "url": "http://stream.mcquack.net/131/index.m3u8",
+  "name": "Antena 3 CNN HD",
+  "url": "https://live77cdn2.antenaplay.ro/live2_aws4_sdi02/live2_aws4_sdi02_5000k.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1920,6 +1940,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Animal Planet (United States)",
   "url": "http://23.237.104.106:8080/USA_ANIMAL_PLANET/index.m3u8",
   "group": "قنوات عالمية"
@@ -2005,11 +2030,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery (Russia)",
-  "url": "http://stream.mcquack.net/205/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Investigation Discovery (United States)",
   "url": "http://212.5.144.156:8080/id/index.m3u8",
   "group": "قنوات عالمية"
@@ -2017,6 +2037,11 @@
  {
   "name": "Investigation Discovery Latin America South",
   "url": "http://38.65.175.84:8000/play/a0ch/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "National Geographic (India) HD",
+  "url": "http://103.135.253.32:8080/NATGEO-HD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
