@@ -60,11 +60,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "AVA Media",
-  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -370,6 +365,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al Quran Al Kareem TV",
+  "url": "http://m.live.net.sa:1935/live/quran/gmswf.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al Rayyan Old TV",
   "url": "https://alrayyancdn.vidgyor.com/pub-nooldraybinbdh/liveabr/playlist_dvr.m3u8",
   "group": "قنوات عربية"
@@ -382,6 +382,11 @@
  {
   "name": "Al Saudiya Alaan",
   "url": "https://shd-gcp-live.edgenextcdn.net/live/bitmovin-ksa-now/71ed3aa814c643306c0a8bc4fcc7d17f/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Al Sunnah Al Nabawiyah TV",
+  "url": "http://m.live.net.sa:1935/live/sunnah/gmswf.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -497,11 +502,6 @@
  {
   "name": "Asharq News",
   "url": "https://live-news.asharq.com/asharq.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Asharq Radio",
-  "url": "https://svs.itworkscdn.net/asharqradiovlive/asharqradiov/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -665,6 +665,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Holy Quran Radio",
+  "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Holy Quran Radio Nablus",
   "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
   "group": "قنوات عربية"
@@ -780,11 +785,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Makan 33",
-  "url": "https://kancdn.medonecdn.net/livehls/oil/kancdn-live/live/makan/live.livx/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Maraya",
   "url": "https://shd-amg-fast.edgenextcdn.net/tx008/playlist.m3u8",
   "group": "قنوات عربية"
@@ -817,6 +817,11 @@
  {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -892,6 +897,11 @@
  {
   "name": "News of the World Arabic",
   "url": "https://live.nowtelly.com/now_arabic/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Nidae AlIslam Radio",
+  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1230,6 +1240,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al Iraqia Sport",
+  "url": "https://imn-live.esite-lab.com/hls/iraqia-sports-1.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Bahrain Sports 1",
   "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1445,11 +1460,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN Premium HD",
-  "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "Eurosport 1 Czechia",
   "url": "http://88.212.7.14/live/test_esp1_hevc_tizen/playlist.m3u8",
   "group": "قنوات رياضية"
@@ -1562,11 +1572,6 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Al Jazeera English HD",
-  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1687,6 +1692,11 @@
  {
   "name": "CNN",
   "url": "https://tvsen6.aynaott.com/cnn/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "CNN HD",
+  "url": "http://212.5.144.156:8080/cnn/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1905,6 +1915,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Sky News Urdu",
+  "url": "https://lbgo.bozztv.com/ssh101/ssh101/skynews/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "TRT World",
   "url": "https://mumbai-edge.smartplaytv.in/TRTWorld/index.m3u8",
   "group": "قنوات عالمية"
@@ -1930,11 +1945,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Animal Planet (United States)",
   "url": "http://23.237.104.106:8080/USA_ANIMAL_PLANET/index.m3u8",
   "group": "قنوات عالمية"
@@ -1942,6 +1952,11 @@
  {
   "name": "Animal Planet Latin America",
   "url": "http://190.128.214.97:64333/play/a01n/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Animal Planet Latin America HD",
+  "url": "http://15.204.246.24:8080/AnimalPlanetHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1975,6 +1990,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "History (United States)",
+  "url": "http://212.5.144.156:8080/history/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "History Asia",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
   "group": "قنوات عالمية"
@@ -1982,6 +2002,11 @@
  {
   "name": "History Hit",
   "url": "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "History Latin America",
+  "url": "http://15.204.246.24:8080/HistoryHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2010,6 +2035,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Investigation Discovery (United States)",
+  "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Investigation Discovery Latin America South",
   "url": "http://38.65.175.84:8000/play/a0ch/index.m3u8",
   "group": "قنوات عالمية"
@@ -2027,6 +2057,16 @@
  {
   "name": "National Geographic (Poland)",
   "url": "http://92.114.85.87:8006/play/a00a/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "National Geographic (United States)",
+  "url": "http://212.5.144.156:8080/natgeo/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "National Geographic Latin America",
+  "url": "http://15.204.246.24:8080/NatGeoHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
