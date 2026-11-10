@@ -60,11 +60,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "AVA Media",
-  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -187,6 +182,11 @@
  {
   "name": "Rudaw TV",
   "url": "https://hlspackager.akamaized.net/live/DB/RUDAW/HLS/RUDAW.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
+  "name": "UTV (Iraq)",
+  "url": "https://utviraqi-live.lg.mncdn.com/utviraqi-live/64c80359/index.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -337,11 +337,6 @@
  {
   "name": "Al Maaref TV",
   "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Al Madina",
-  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -517,6 +512,11 @@
  {
   "name": "Asil TV",
   "url": "https://live.asil.tv/asiltv/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Assirat TV",
+  "url": "https://softverse.b-cdn.net/Assirat/assiratobs/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -700,6 +700,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Jeddah Radio",
+  "url": "https://live.kwikmotion.com/sbrksajeddahradiolive/srpksajeddahradio/chunks.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Jordan Archive",
   "url": "https://playlist.fasttvcdn.com/pl/cc0blorawy1ibohhrupraa/Archive/playlist.m3u8",
   "group": "قنوات عربية"
@@ -825,6 +830,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -900,11 +910,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Nidae AlIslam Radio",
-  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Nour Al Koddass",
   "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
@@ -917,11 +922,6 @@
  {
   "name": "Noursat",
   "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Oman TV Cultural",
-  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1835,6 +1835,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Fox News Channel",
+  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -2025,13 +2030,13 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery (United States)",
-  "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "name": "Investigation Discovery (Russia)",
+  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery Latin America South",
-  "url": "http://38.65.175.84:8000/play/a0ch/index.m3u8",
+  "name": "Investigation Discovery (United States)",
+  "url": "http://212.5.144.156:8080/id/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
