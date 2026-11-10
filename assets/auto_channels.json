@@ -170,11 +170,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "Mixkurdy",
-  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Payam TV",
   "url": "https://hlspackager.akamaized.net/live/DB/PAYAM_TV/HLS/PAYAM_TV.m3u8",
   "group": "قنوات عراقية"
@@ -340,6 +335,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al Madina",
+  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al Maghribia",
   "url": "http://185.9.2.18/chid_205/index.m3u8",
   "group": "قنوات عربية"
@@ -377,6 +377,11 @@
  {
   "name": "Al Rayyan TV",
   "url": "https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Al Riyadh Radio",
+  "url": "https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -830,11 +835,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -910,6 +910,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Nidae AlIslam Radio",
+  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Nour Al Koddass",
   "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
@@ -922,6 +927,11 @@
  {
   "name": "Noursat",
   "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1252,11 +1262,6 @@
  {
   "name": "KTV Sport",
   "url": "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "KTV Sport Plus",
-  "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1705,11 +1710,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "CNN HD",
-  "url": "http://212.5.144.156:8080/cnn/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "CNN Brasil",
   "url": "https://d25usgadhphvwi.cloudfront.net/hls/main.m3u8",
   "group": "قنوات عالمية"
@@ -1960,11 +1960,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet Latin America HD",
-  "url": "http://15.204.246.24:8080/AnimalPlanetHD/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Autentic History",
   "url": "https://9e754fa707344ccca6d84955c8fcaf36.mediatailor.us-east-1.amazonaws.com/v1/master/44f73ba4d03e9607dcd9bebdcb8494d86964f1d8/RlaxxTV-eu_AutenticHistory/playlist.m3u8",
   "group": "قنوات عالمية"
@@ -1995,11 +1990,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "History (United States)",
-  "url": "http://212.5.144.156:8080/history/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "History Asia",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=9856",
   "group": "قنوات عالمية"
@@ -2007,11 +1997,6 @@
  {
   "name": "History Hit",
   "url": "https://lds-timeline-rakuten.amagi.tv/playlist.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "History Latin America",
-  "url": "http://15.204.246.24:8080/HistoryHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2035,8 +2020,8 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Investigation Discovery (United States)",
-  "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "name": "Investigation Discovery Latin America South",
+  "url": "http://38.65.175.84:8000/play/a0ch/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -2047,16 +2032,6 @@
  {
   "name": "National Geographic (Poland)",
   "url": "http://92.114.85.87:8006/play/a00a/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic (United States)",
-  "url": "http://212.5.144.156:8080/natgeo/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "National Geographic Latin America",
-  "url": "http://15.204.246.24:8080/NatGeoHD/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
