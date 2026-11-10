@@ -60,6 +60,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "AVA Media",
+  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -170,6 +175,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "Mixkurdy",
+  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Payam TV",
   "url": "https://hlspackager.akamaized.net/live/DB/PAYAM_TV/HLS/PAYAM_TV.m3u8",
   "group": "قنوات عراقية"
@@ -177,11 +187,6 @@
  {
   "name": "Rudaw TV",
   "url": "https://hlspackager.akamaized.net/live/DB/RUDAW/HLS/RUDAW.m3u8",
-  "group": "قنوات عراقية"
- },
- {
-  "name": "UTV (Iraq)",
-  "url": "https://utviraqi-live.lg.mncdn.com/utviraqi-live/64c80359/index.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -515,11 +520,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Assirat TV",
-  "url": "https://softverse.b-cdn.net/Assirat/assiratobs/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Atfal & Mawaheb TV",
   "url": "https://5aafcc5de91f1.streamlock.net/atfal1.com/atfal2/playlist.m3u8",
   "group": "قنوات عربية"
@@ -825,11 +825,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -927,6 +922,11 @@
  {
   "name": "Oman TV Cultural",
   "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Mubashir",
+  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1057,6 +1057,11 @@
  {
   "name": "Safeer TV",
   "url": "https://cdn3.wowza.com/1/YStGZlJRdktzZkdK/VXROZWNW/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sahara 24",
+  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1250,6 +1255,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "KTV Sport Plus",
+  "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "Oman Sports TV",
   "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
@@ -1342,6 +1352,11 @@
  {
   "name": "DAZN Darts x Pluto TV",
   "url": "https://jmp2.uk/plu-64b67f0424ade50008a3be17.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "DAZN F1",
+  "url": "https://tvorb.net/ZTV/6918-live.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1495,11 +1510,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "Eurosport 2 Portugal",
-  "url": "http://185.228.163.146:8000/play/a048/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ABC News",
   "url": "https://abc-news-dmd-streams-1.akamaized.net/out/v1/701126012d044971b3fa89406a440133/index.m3u8",
   "group": "قنوات عالمية"
@@ -1567,6 +1577,11 @@
  {
   "name": "Al Jazeera English",
   "url": "https://live-hls-apps-aje-fa.getaj.net/AJE/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Al Jazeera English HD",
+  "url": "http://stream.mcquack.net/131/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
@@ -1820,11 +1835,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Fox News Channel",
-  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -2012,11 +2022,6 @@
  {
   "name": "Investigation Discovery (Hungary)",
   "url": "http://88.212.7.14/live/id_hun/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Investigation Discovery (Russia)",
-  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
