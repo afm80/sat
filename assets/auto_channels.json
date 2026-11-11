@@ -115,11 +115,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "Imam Hussein TV 6",
-  "url": "http://live.imamhossaintv.com/live/ih6.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Ishtar TV SD",
   "url": "https://stream.ishtartv.com/live/iShtarHD/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -167,11 +162,6 @@
  {
   "name": "Marjaeyat TV Persian",
   "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
-  "group": "قنوات عراقية"
- },
- {
-  "name": "Mixkurdy",
-  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -820,23 +810,8 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Medi1TV Arabic",
-  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Medi1TV Maghreb",
-  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -915,18 +890,8 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Nidae AlIslam Radio",
-  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Nour Al Koddass",
-  "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Oman TV Cultural",
-  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "name": "Nour Al Sharq",
+  "url": "https://svs.itworkscdn.net/nour8satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -967,11 +932,6 @@
  {
   "name": "Pulse95 Radio",
   "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Qatar Television 2",
-  "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1045,11 +1005,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Roya TV (Jordan)",
-  "url": "https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "RT Arabic",
   "url": "https://rt-arb.rttv.com/dvr/rtarab/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1097,6 +1052,16 @@
  {
   "name": "Shabab FM",
   "url": "https://streaming.zaytonatube.com:8081/ShababFM/shabab/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sharjah Radio",
+  "url": "https://svs.itworkscdn.net/smcradiolive/smcradiolive/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Sharjah Radio Quran",
+  "url": "https://live.kwikmotion.com/smcquranlive/quranradiolive/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1385,6 +1350,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN 2 (United States) HD",
+  "url": "http://85.237.89.160:9590/usa-s/ESPN-2-HD/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN 2 Latin America",
   "url": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
   "group": "قنوات رياضية"
@@ -1427,6 +1397,11 @@
  {
   "name": "ESPN (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07z/index.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "ESPN (United States) HD",
+  "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1815,11 +1790,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Fox News Channel",
-  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -1925,11 +1895,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Animal Planet (United States)",
   "url": "http://23.237.104.106:8080/USA_ANIMAL_PLANET/index.m3u8",
   "group": "قنوات عالمية"
@@ -2007,6 +1972,11 @@
  {
   "name": "Investigation Discovery (Hungary)",
   "url": "http://88.212.7.14/live/id_hun/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Investigation Discovery (Russia)",
+  "url": "http://stream.mcquack.net/205/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
