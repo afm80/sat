@@ -60,6 +60,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "AVA Media",
+  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -377,11 +382,6 @@
  {
   "name": "Al Rayyan TV",
   "url": "https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Al Riyadh Radio",
-  "url": "https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -795,11 +795,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Makan 33",
-  "url": "https://kancdn.medonecdn.net/livehls/oil/kancdn-live/live/makan/live.livx/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Maraya",
   "url": "https://shd-amg-fast.edgenextcdn.net/tx008/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1160,11 +1155,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Taha TV",
-  "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Takbeer TV",
   "url": "https://cd198.anystream.uk:9092/iqapp/t5kb86tv/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1262,11 +1252,6 @@
  {
   "name": "KTV Sport",
   "url": "https://kwtspta.cdn.mangomolo.com/sp/smil:sp.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Oman Sports TV",
-  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1945,11 +1930,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet (Russia)",
-  "url": "http://stream.mcquack.net/114/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Animal Planet (United States)",
   "url": "http://23.237.104.106:8080/USA_ANIMAL_PLANET/index.m3u8",
   "group": "قنوات عالمية"
@@ -2021,7 +2001,7 @@
  },
  {
   "name": "Investigation Discovery Latin America South",
-  "url": "http://38.65.175.84:8000/play/a0ch/index.m3u8",
+  "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/41.m3u8",
   "group": "قنوات عالمية"
  },
  {
