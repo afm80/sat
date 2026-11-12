@@ -60,6 +60,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "AVA Media",
+  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -115,6 +120,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "Imam Hussein TV 6",
+  "url": "http://live.imamhossaintv.com/live/ih6.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Ishtar TV SD",
   "url": "https://stream.ishtartv.com/live/iShtarHD/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -162,6 +172,11 @@
  {
   "name": "Marjaeyat TV Persian",
   "url": "https://livefa.marjaeyattv.com/mtv_fa/playlist.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
+  "name": "Mixkurdy",
+  "url": "https://avr.host247.net/live/Mix-kurdy/playlist.m3u8",
   "group": "قنوات عراقية"
  },
  {
@@ -372,6 +387,11 @@
  {
   "name": "Al Rayyan TV",
   "url": "https://alrayyancdn.vidgyor.com/pub-noalrayy3pwz0l/liveabr/playlist_dvr.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Al Riyadh Radio",
+  "url": "https://live.kwikmotion.com/sbrksariyadhradiolive/srpksariyadhradio/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -815,6 +835,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Melody FM",
+  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "mfm",
   "url": "https://hms.pfs.gdn/hms/v1/broadcast/hlmvmp2hfriode891/playlist.m3u8",
   "group": "قنوات عربية"
@@ -890,13 +915,28 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Nidae AlIslam Radio",
+  "url": "https://live.kwikmotion.com/sbrksanedaradiolive/srpksanedaradio/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Nour Al Koddass",
+  "url": "https://svs.itworkscdn.net/nour1satlive/livestream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Nour Al Sharq",
   "url": "https://svs.itworkscdn.net/nour8satlive/livestream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
-  "name": "Oman TV Mubashir",
-  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
+  "name": "Noursat",
+  "url": "https://svs.itworkscdn.net/nour4satlive/livestream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Cultural",
+  "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -932,6 +972,11 @@
  {
   "name": "Pulse95 Radio",
   "url": "https://svs.itworkscdn.net/pulse95live/pulse96/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Qatar Television 2",
+  "url": "https://live.kwikmotion.com/qtv2live/qtv2.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1002,6 +1047,11 @@
  {
   "name": "Rotana Tarab Jordan City View",
   "url": "http://45.63.116.205/hls3/stream1.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Roya TV (Jordan)",
+  "url": "https://live.kwikmotion.com/royatvpublic/royatv.smil/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1420,6 +1470,11 @@
   "group": "قنوات رياضية"
  },
  {
+  "name": "ESPN Premium",
+  "url": "http://45.134.141.161:2200/ARG/ESPN_Premium_Argentina_HD/tracks-v1a1/mono.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
   "name": "ESPN Premium HD",
   "url": "http://158.172.155.130:8000/play/a0ao/index.m3u8",
   "group": "قنوات رياضية"
@@ -1457,11 +1512,6 @@
  {
   "name": "Eurosport 2 Czechia",
   "url": "http://88.212.7.14/live/test_esp2_hevc_tizen/playlist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Eurosport 2 Hungary",
-  "url": "http://88.212.7.14/live/esp2_hun/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1787,6 +1837,11 @@
  {
   "name": "Euronews Spanish",
   "url": "https://iptv.bitred.cl/euronews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Fox News Channel",
+  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
