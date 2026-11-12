@@ -60,11 +60,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "AVA Media",
-  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -342,11 +337,6 @@
  {
   "name": "Al Maaref TV",
   "url": "https://bucharest.zeuscdn724.com/lb0/CH-AL-MA/index.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Al Madina",
-  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -830,6 +820,16 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Medi1TV Arabic",
+  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-arabic_g90v4ec/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Medi1TV Maghreb",
+  "url": "https://cdn.live.easybroadcast.io/abr_corp/83_medi1tv-maghreb_jnbspmg/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
   "group": "قنوات عربية"
@@ -937,6 +937,11 @@
  {
   "name": "Oman TV Cultural",
   "url": "https://partwota.cdn.mgmlcdn.com/omcultural/smil:omcultural.stream.smil/chunklist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Oman TV Mubashir",
+  "url": "https://partwota.cdn.mgmlcdn.com/omlive/smil:omlive.stream.smil/chunklist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1155,11 +1160,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Taha TV",
-  "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Takbeer TV",
   "url": "https://cd198.anystream.uk:9092/iqapp/t5kb86tv/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1262,11 +1262,6 @@
  {
   "name": "KTV Sport Plus",
   "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "Oman Sports TV",
-  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1947,6 +1942,11 @@
  {
   "name": "WION",
   "url": "http://vg-zeefta.akamaized.net/ptnr-yupptv/title-wion/v1/master/611d79b11b77e2f571934fd80ca1413453772ac7/20c3c0d9-0256-43fe-bca6-70fdd490b957/main.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Animal Planet (Russia)",
+  "url": "http://stream.mcquack.net/114/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
