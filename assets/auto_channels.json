@@ -60,6 +60,11 @@
   "group": "قنوات عراقية"
  },
  {
+  "name": "AVA Media",
+  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
+  "group": "قنوات عراقية"
+ },
+ {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -575,6 +580,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "CNA (Algeria)",
+  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "CNBC Arabiya",
   "url": "https://cnbc-live.akamaized.net/cnbc/master.m3u8",
   "group": "قنوات عربية"
@@ -832,11 +842,6 @@
  {
   "name": "Mekameleen TV",
   "url": "https://mn-nl.mncdn.com/mekameleen/smil:mekameleentv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Melody FM",
-  "url": "https://cdn3.wowza.com/1/OVRrOWxXUEswS2Yv/eGVxSWZy/hls/live/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1262,6 +1267,11 @@
  {
   "name": "KTV Sport Plus",
   "url": "https://kwtsplta.cdn.mangomolo.com/spl/smil:spl.stream.smil/chunklist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "Oman Sports TV",
+  "url": "https://partneta.cdn.mgmlcdn.com/omsport/smil:omsport.stream.smil/chunklist.m3u8",
   "group": "قنوات رياضية"
  },
  {
