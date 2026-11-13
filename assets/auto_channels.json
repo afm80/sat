@@ -340,6 +340,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Al Madina",
+  "url": "https://streaming.zaytonatube.com:8081/AlMadinatv/almadina21/index.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Al Maghribia",
   "url": "http://185.9.2.18/chid_205/index.m3u8",
   "group": "قنوات عربية"
@@ -677,11 +682,6 @@
  {
   "name": "Holy Quran Radio",
   "url": "https://live.kwikmotion.com/sbrksaquranradiolive/srpksaquranradio/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Holy Quran Radio Nablus",
-  "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1065,11 +1065,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Sahara 24",
-  "url": "https://live.saharamedias.net:3317/live/shara24live.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Sat 7 Arabic",
   "url": "https://svs.itworkscdn.net/sat7arabiclive/sat7arabic.smil/playlist_dvr.m3u8",
   "group": "قنوات عربية"
@@ -1115,6 +1110,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Sharjah TV",
+  "url": "https://live.kwikmotion.com/smc1live/smc1tv.smil/playlist.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Sky News Arabia",
   "url": "https://live-stream.skynewsarabia.com/c-horizontal-channel/horizontal-stream/index.m3u8",
   "group": "قنوات عربية"
@@ -1147,11 +1147,6 @@
  {
   "name": "Syria TV",
   "url": "https://live.kwikmotion.com/syriatvlive/syriatv.smil/playlist_dvr.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "Taha TV",
-  "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1292,11 +1287,6 @@
  {
   "name": "Astrahan.Ru Sport",
   "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "beIN Sports USA",
-  "url": "https://tvsen6.aynaott.com/beinsports/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1840,11 +1830,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Fox News Channel",
-  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Fox News Radio",
   "url": "https://radiovid.foxnews.com/hls/live/661547/RADIOVID/index.m3u8",
   "group": "قنوات عالمية"
@@ -1960,6 +1945,11 @@
   "group": "قنوات عالمية"
  },
  {
+  "name": "Animal Planet Latin America",
+  "url": "http://190.128.214.97:64333/play/a01n/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
   "name": "Animal Planet Latin America HD",
   "url": "http://15.204.246.24:8080/AnimalPlanetHD/index.m3u8",
   "group": "قنوات عالمية"
@@ -2037,6 +2027,11 @@
  {
   "name": "Investigation Discovery (United States)",
   "url": "http://212.5.144.156:8080/id/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Investigation Discovery Latin America South",
+  "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/41.m3u8",
   "group": "قنوات عالمية"
  },
  {
