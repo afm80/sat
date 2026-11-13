@@ -685,6 +685,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Holy Quran Radio Nablus",
+  "url": "http://streaming.zaytonatube.com:8080/holyquran/holyquran/video.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Hya TV",
   "url": "https://freem3u.xyz/api/live/play.m3u8?vid=187",
   "group": "قنوات عربية"
@@ -1150,6 +1155,11 @@
   "group": "قنوات عربية"
  },
  {
+  "name": "Taha TV",
+  "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
   "name": "Takbeer TV",
   "url": "https://cd198.anystream.uk:9092/iqapp/t5kb86tv/playlist.m3u8",
   "group": "قنوات عربية"
@@ -1240,11 +1250,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "beIN Sports 1",
-  "url": "https://vg162.adcdsd123321.shop/7.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "Jordan Sport",
   "url": "https://jrtv-live.ercdn.net/jordansporthd/jordansporthd.m3u8",
   "group": "قنوات رياضية"
@@ -1287,6 +1292,11 @@
  {
   "name": "Astrahan.Ru Sport",
   "url": "https://streaming.astrakhan.ru/astrakhanrusporthd/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "beIN Sports USA",
+  "url": "https://tvsen6.aynaott.com/beinsports/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1350,11 +1360,6 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "DAZN F1",
-  "url": "https://tvorb.net/ZTV/6918-live.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "DAZN Heldinnen x Pluto TV",
   "url": "https://jmp2.uk/plu-64afe50c5dc16600087f3227.m3u8",
   "group": "قنوات رياضية"
@@ -1395,43 +1400,13 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN 2 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_2/ESPN_2.isml/ESPN_2.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN 2 Latin America Colombia",
   "url": "http://190.61.47.54:8000/play/a005/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
-  "name": "ESPN 3 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_3/ESPN_3.isml/ESPN_3.m3u8",
-  "group": "قنوات رياضية"
- },
- {
   "name": "ESPN 4 (Brazil)",
   "url": "http://181.78.197.59:8000/play/a07n/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 4 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_4/ESPN_4.isml/ESPN_4.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 5 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_5/ESPN_5.isml/ESPN_5.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 6 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_6/ESPN_6.isml/ESPN_6.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN 7 Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN_7/ESPN_7.isml/ESPN_7.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1442,11 +1417,6 @@
  {
   "name": "ESPN (United States) HD",
   "url": "http://85.237.89.160:9590/usa-s/ESPN-HD/index.m3u8",
-  "group": "قنوات رياضية"
- },
- {
-  "name": "ESPN Latin America",
-  "url": "https://barinaslive1.boldmss.com/ESPN/ESPN.isml/ESPN.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1827,6 +1797,11 @@
  {
   "name": "Euronews Spanish",
   "url": "https://iptv.bitred.cl/euronews/index.m3u8",
+  "group": "قنوات عالمية"
+ },
+ {
+  "name": "Fox News Channel",
+  "url": "https://tvsen6.aynaott.com/foxnews/index.m3u8",
   "group": "قنوات عالمية"
  },
  {
