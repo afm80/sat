@@ -60,11 +60,6 @@
   "group": "قنوات عراقية"
  },
  {
-  "name": "AVA Media",
-  "url": "http://hlspackager.akamaized.net/live/DB/AVA_TV/HLS/AVA_TV-avc1_2500000=10002,mp4a_128000=20000.m3u8",
-  "group": "قنوات عراقية"
- },
- {
   "name": "Avar TV",
   "url": "https://avr.host247.net/live/AvarTv/playlist.m3u8",
   "group": "قنوات عراقية"
@@ -577,11 +572,6 @@
  {
   "name": "Charity TV",
   "url": "https://652930de05533.streamlock.net/live/ngrp:livestream_all/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
-  "name": "CNA (Algeria)",
-  "url": "https://live.creacast.com/cna/stream/playlist.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1125,11 +1115,6 @@
   "group": "قنوات عربية"
  },
  {
-  "name": "Sharjah TV",
-  "url": "https://live.kwikmotion.com/smc1live/smc1tv.smil/playlist.m3u8",
-  "group": "قنوات عربية"
- },
- {
   "name": "Sky News Arabia",
   "url": "https://live-stream.skynewsarabia.com/c-horizontal-channel/horizontal-stream/index.m3u8",
   "group": "قنوات عربية"
@@ -1162,6 +1147,11 @@
  {
   "name": "Syria TV",
   "url": "https://live.kwikmotion.com/syriatvlive/syriatv.smil/playlist_dvr.m3u8",
+  "group": "قنوات عربية"
+ },
+ {
+  "name": "Taha TV",
+  "url": "https://stream.starmenajo.com/hls/app/live/ts:fhd.m3u8",
   "group": "قنوات عربية"
  },
  {
@@ -1252,6 +1242,11 @@
  {
   "name": "Bahrain Sports 1",
   "url": "https://5c7b683162943.streamlock.net/live/ngrp:sportsone_all/playlist.m3u8",
+  "group": "قنوات رياضية"
+ },
+ {
+  "name": "beIN Sports 1",
+  "url": "https://vg162.adcdsd123321.shop/7.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1515,8 +1510,8 @@
   "group": "قنوات رياضية"
  },
  {
-  "name": "Eurosport 2 Czechia",
-  "url": "http://88.212.7.14/live/test_esp2_hevc_tizen/playlist.m3u8",
+  "name": "Eurosport 1 UK",
+  "url": "http://85.117.37.43/eurosport1/index.m3u8",
   "group": "قنوات رياضية"
  },
  {
@@ -1965,11 +1960,6 @@
   "group": "قنوات عالمية"
  },
  {
-  "name": "Animal Planet Latin America",
-  "url": "http://190.128.214.97:64333/play/a01n/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
   "name": "Animal Planet Latin America HD",
   "url": "http://15.204.246.24:8080/AnimalPlanetHD/index.m3u8",
   "group": "قنوات عالمية"
@@ -2047,11 +2037,6 @@
  {
   "name": "Investigation Discovery (United States)",
   "url": "http://212.5.144.156:8080/id/index.m3u8",
-  "group": "قنوات عالمية"
- },
- {
-  "name": "Investigation Discovery Latin America South",
-  "url": "http://45.184.109.10/live/69393EAE6ADBC65A68F942022362A202/41.m3u8",
   "group": "قنوات عالمية"
  },
  {
